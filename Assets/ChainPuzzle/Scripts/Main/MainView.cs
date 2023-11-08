@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class MainView : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] PlayerPrecenter player;
+    [SerializeField] PieceControlFactory factory;
+
+    public void SetUp()
     {
-        
+        player.OnInitialized();
+        factory.OnInitialized();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnUpdate()
     {
-        
+        player.OnUpdate();
+        factory.OnUpdate();
     }
 }

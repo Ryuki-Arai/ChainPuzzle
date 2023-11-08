@@ -17,13 +17,14 @@ public class MainPrecenter : SingletonMonoBehaviour<MainPrecenter>
 
     private void Initialize()
     {
-
+        view.SetUp();
         model = new MainModel();
+        this.UpdateAsObservable()
+            .Subscribe(_ => OnUpdate());
     }
 
     private void OnUpdate()
     {
-        this.UpdateAsObservable()
-            .Subscribe(_ => Debug.Log("Update!"));
+        view.OnUpdate();
     }
 }

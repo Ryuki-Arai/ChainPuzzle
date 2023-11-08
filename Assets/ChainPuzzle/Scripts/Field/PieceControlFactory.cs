@@ -12,24 +12,36 @@ public class PieceControlFactory : MonoBehaviour
     [SerializeField] PieceDigitType startDigit;
     [SerializeField] int index;
     [SerializeField] Piece piecePrefab;
-    [SerializeField] Transform spawnPos;
+    [SerializeField] Transform spawnParent;
     [SerializeField] int maxSpawn;
+    [SerializeField] float inactivePosY;
 
     [SerializeField] private PieceData[] pieceDataArr;
     private List<Piece> piecePool = new List<Piece>();
 
-
-    private void Start()
-    {
-        OnInitialized();
-    }
-
-    private void OnInitialized()
+    public void OnInitialized()
     {
         SetPieceDataArr();
+    }
 
-        this.UpdateAsObservable()
-            .Subscribe(_ => SpawnPiece());
+    public void OnUpdate()
+    {
+        SpawnPiece();
+        PieceSafety();
+    }
+
+    public void DesablePiece(Piece piece)
+    {
+        //var index = piecePool.IndexOf(piece);
+        InactivePiece(piece);
+    }
+
+    private void PieceSafety()
+    {
+        var offStagePieces = piecePool
+            .Where(piece => piece.gameObject.transform.position.y < inactivePosY && piece.gameObject.activeSelf).ToList();
+
+        offStagePieces.ForEach(piece => InactivePiece(piece));
     }
 
     private void SetPieceDataArr()
@@ -70,7 +82,7 @@ public class PieceControlFactory : MonoBehaviour
 
     private Piece CreatePiece()
     {
-        var piece = Instantiate(piecePrefab);
+        var piece = Instantiate(piecePrefab,spawnParent);
         piece.gameObject.SetActive(false);
         piecePool.Add(piece);
         return piece;
@@ -79,8 +91,13 @@ public class PieceControlFactory : MonoBehaviour
     private void ActivePiece(Piece piece)
     {
         piece.Initialize(GetPieceData());
-        piece.gameObject.transform.position = spawnPos.position;
+        piece.gameObject.transform.position = spawnParent.position;
         piece.gameObject.SetActive(true);
+    }
+
+    private void InactivePiece(Piece piece)
+    {
+        piece.gameObject.SetActive(false);
     }
 
     private PieceData GetPieceData()

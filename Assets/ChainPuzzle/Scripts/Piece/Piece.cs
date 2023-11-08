@@ -2,24 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityFx.Outline;
 
 public class Piece : MonoBehaviour
 {
     [SerializeField] private TMP_Text text;
     [SerializeField] private Renderer mesh;
-    public PieceData Data { get; private set; }
+    [SerializeField] private OutlineBehaviour outline;
+    public PieceData PieceData { get; private set; }
 
 
     public void Initialize(PieceData data)
     {
-        Data = data;
+        PieceData = data;
         SetData();
+        PieceData.SetData();
     }
     
+    public void Select()
+    {
+        outline.OutlineColor = Color.yellow;
+    }
+
     private void SetData()
     {
-        text.text = Data.StrView;
-        mesh.material = Data.Material;
+        text.text = PieceData.StrView;
+        mesh.material = PieceData.Material;
+        outline.OutlineColor = Color.black;
     }
 }
 

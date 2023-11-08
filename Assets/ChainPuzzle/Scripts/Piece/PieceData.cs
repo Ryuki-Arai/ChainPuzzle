@@ -9,9 +9,16 @@ public class PieceData
     [field: SerializeField] public string StrView { get; private set; }
     [field: SerializeField] public Material Material { get; private set; }
 
+    public (int ID, PieceDigitType DigitType) Data;
+
     public PieceData()
     {
+        
+    }
 
+    public void SetData()
+    {
+        Data = new(ID, DigitType);
     }
 
     private void SetStrView()
