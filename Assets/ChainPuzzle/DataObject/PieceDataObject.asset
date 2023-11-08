@@ -1,0 +1,535 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc3479ed901f90647aaf7ff3969c8dc4, type: 3}
+  m_Name: PieceDataObject
+  m_EditorClassIdentifier: 
+  dataArr:
+  - <ID>k__BackingField: 0
+    <DigitType>k__BackingField: 0
+    <StrView>k__BackingField: 1
+    <Material>k__BackingField: {fileID: 2100000, guid: 405c0d6e578f8b94e991de66f96a2e0e, type: 2}
+  - <ID>k__BackingField: 1
+    <DigitType>k__BackingField: 0
+    <StrView>k__BackingField: 2
+    <Material>k__BackingField: {fileID: 2100000, guid: e2df3ca29aeabbd4c984ff34dc05aa45, type: 2}
+  - <ID>k__BackingField: 2
+    <DigitType>k__BackingField: 0
+    <StrView>k__BackingField: 4
+    <Material>k__BackingField: {fileID: 2100000, guid: fd9b2eb1242a9974ebdc69bbef6267eb, type: 2}
+  - <ID>k__BackingField: 3
+    <DigitType>k__BackingField: 0
+    <StrView>k__BackingField: 8
+    <Material>k__BackingField: {fileID: 2100000, guid: 7203a39fc26b48d4884a2527a270d65e, type: 2}
+  - <ID>k__BackingField: 4
+    <DigitType>k__BackingField: 0
+    <StrView>k__BackingField: 16
+    <Material>k__BackingField: {fileID: 2100000, guid: 5e59d82209bb7ab42a8fa9ef7fbde60e, type: 2}
+  - <ID>k__BackingField: 5
+    <DigitType>k__BackingField: 0
+    <StrView>k__BackingField: 32
+    <Material>k__BackingField: {fileID: 2100000, guid: b0f8ab735c4f1044788283f1deecfa4a, type: 2}
+  - <ID>k__BackingField: 6
+    <DigitType>k__BackingField: 0
+    <StrView>k__BackingField: 64
+    <Material>k__BackingField: {fileID: 2100000, guid: 824627d9a5974404a9d0f02ab5ae259c, type: 2}
+  - <ID>k__BackingField: 7
+    <DigitType>k__BackingField: 0
+    <StrView>k__BackingField: 128
+    <Material>k__BackingField: {fileID: 2100000, guid: e51dec13e7d173a44b397e3a3ed32357, type: 2}
+  - <ID>k__BackingField: 8
+    <DigitType>k__BackingField: 0
+    <StrView>k__BackingField: 256
+    <Material>k__BackingField: {fileID: 2100000, guid: 400080b79cead9643a56384883efcfa7, type: 2}
+  - <ID>k__BackingField: 9
+    <DigitType>k__BackingField: 0
+    <StrView>k__BackingField: 512
+    <Material>k__BackingField: {fileID: 2100000, guid: f313e9c3c8b4bb64ea8c8cef9491ccfe, type: 2}
+  - <ID>k__BackingField: 0
+    <DigitType>k__BackingField: 1
+    <StrView>k__BackingField: 1024
+    <Material>k__BackingField: {fileID: 2100000, guid: 405c0d6e578f8b94e991de66f96a2e0e, type: 2}
+  - <ID>k__BackingField: 1
+    <DigitType>k__BackingField: 1
+    <StrView>k__BackingField: 2048
+    <Material>k__BackingField: {fileID: 2100000, guid: e2df3ca29aeabbd4c984ff34dc05aa45, type: 2}
+  - <ID>k__BackingField: 2
+    <DigitType>k__BackingField: 1
+    <StrView>k__BackingField: 4K
+    <Material>k__BackingField: {fileID: 2100000, guid: fd9b2eb1242a9974ebdc69bbef6267eb, type: 2}
+  - <ID>k__BackingField: 3
+    <DigitType>k__BackingField: 1
+    <StrView>k__BackingField: 8K
+    <Material>k__BackingField: {fileID: 2100000, guid: 7203a39fc26b48d4884a2527a270d65e, type: 2}
+  - <ID>k__BackingField: 4
+    <DigitType>k__BackingField: 1
+    <StrView>k__BackingField: 16K
+    <Material>k__BackingField: {fileID: 2100000, guid: 5e59d82209bb7ab42a8fa9ef7fbde60e, type: 2}
+  - <ID>k__BackingField: 5
+    <DigitType>k__BackingField: 1
+    <StrView>k__BackingField: 32K
+    <Material>k__BackingField: {fileID: 2100000, guid: b0f8ab735c4f1044788283f1deecfa4a, type: 2}
+  - <ID>k__BackingField: 6
+    <DigitType>k__BackingField: 1
+    <StrView>k__BackingField: 64K
+    <Material>k__BackingField: {fileID: 2100000, guid: 824627d9a5974404a9d0f02ab5ae259c, type: 2}
+  - <ID>k__BackingField: 7
+    <DigitType>k__BackingField: 1
+    <StrView>k__BackingField: 128K
+    <Material>k__BackingField: {fileID: 2100000, guid: e51dec13e7d173a44b397e3a3ed32357, type: 2}
+  - <ID>k__BackingField: 8
+    <DigitType>k__BackingField: 1
+    <StrView>k__BackingField: 256K
+    <Material>k__BackingField: {fileID: 2100000, guid: 400080b79cead9643a56384883efcfa7, type: 2}
+  - <ID>k__BackingField: 9
+    <DigitType>k__BackingField: 1
+    <StrView>k__BackingField: 512K
+    <Material>k__BackingField: {fileID: 2100000, guid: f313e9c3c8b4bb64ea8c8cef9491ccfe, type: 2}
+  - <ID>k__BackingField: 0
+    <DigitType>k__BackingField: 2
+    <StrView>k__BackingField: 1M
+    <Material>k__BackingField: {fileID: 2100000, guid: 405c0d6e578f8b94e991de66f96a2e0e, type: 2}
+  - <ID>k__BackingField: 1
+    <DigitType>k__BackingField: 2
+    <StrView>k__BackingField: 2M
+    <Material>k__BackingField: {fileID: 2100000, guid: e2df3ca29aeabbd4c984ff34dc05aa45, type: 2}
+  - <ID>k__BackingField: 2
+    <DigitType>k__BackingField: 2
+    <StrView>k__BackingField: 4M
+    <Material>k__BackingField: {fileID: 2100000, guid: fd9b2eb1242a9974ebdc69bbef6267eb, type: 2}
+  - <ID>k__BackingField: 3
+    <DigitType>k__BackingField: 2
+    <StrView>k__BackingField: 8M
+    <Material>k__BackingField: {fileID: 2100000, guid: 7203a39fc26b48d4884a2527a270d65e, type: 2}
+  - <ID>k__BackingField: 4
+    <DigitType>k__BackingField: 2
+    <StrView>k__BackingField: 16M
+    <Material>k__BackingField: {fileID: 2100000, guid: 5e59d82209bb7ab42a8fa9ef7fbde60e, type: 2}
+  - <ID>k__BackingField: 5
+    <DigitType>k__BackingField: 2
+    <StrView>k__BackingField: 32M
+    <Material>k__BackingField: {fileID: 2100000, guid: b0f8ab735c4f1044788283f1deecfa4a, type: 2}
+  - <ID>k__BackingField: 6
+    <DigitType>k__BackingField: 2
+    <StrView>k__BackingField: 64M
+    <Material>k__BackingField: {fileID: 2100000, guid: 824627d9a5974404a9d0f02ab5ae259c, type: 2}
+  - <ID>k__BackingField: 7
+    <DigitType>k__BackingField: 2
+    <StrView>k__BackingField: 128M
+    <Material>k__BackingField: {fileID: 2100000, guid: e51dec13e7d173a44b397e3a3ed32357, type: 2}
+  - <ID>k__BackingField: 8
+    <DigitType>k__BackingField: 2
+    <StrView>k__BackingField: 256M
+    <Material>k__BackingField: {fileID: 2100000, guid: 400080b79cead9643a56384883efcfa7, type: 2}
+  - <ID>k__BackingField: 9
+    <DigitType>k__BackingField: 2
+    <StrView>k__BackingField: 512M
+    <Material>k__BackingField: {fileID: 2100000, guid: f313e9c3c8b4bb64ea8c8cef9491ccfe, type: 2}
+  - <ID>k__BackingField: 0
+    <DigitType>k__BackingField: 3
+    <StrView>k__BackingField: 1B
+    <Material>k__BackingField: {fileID: 2100000, guid: 405c0d6e578f8b94e991de66f96a2e0e, type: 2}
+  - <ID>k__BackingField: 1
+    <DigitType>k__BackingField: 3
+    <StrView>k__BackingField: 2B
+    <Material>k__BackingField: {fileID: 2100000, guid: e2df3ca29aeabbd4c984ff34dc05aa45, type: 2}
+  - <ID>k__BackingField: 2
+    <DigitType>k__BackingField: 3
+    <StrView>k__BackingField: 4B
+    <Material>k__BackingField: {fileID: 2100000, guid: fd9b2eb1242a9974ebdc69bbef6267eb, type: 2}
+  - <ID>k__BackingField: 3
+    <DigitType>k__BackingField: 3
+    <StrView>k__BackingField: 8B
+    <Material>k__BackingField: {fileID: 2100000, guid: 7203a39fc26b48d4884a2527a270d65e, type: 2}
+  - <ID>k__BackingField: 4
+    <DigitType>k__BackingField: 3
+    <StrView>k__BackingField: 16B
+    <Material>k__BackingField: {fileID: 2100000, guid: 5e59d82209bb7ab42a8fa9ef7fbde60e, type: 2}
+  - <ID>k__BackingField: 5
+    <DigitType>k__BackingField: 3
+    <StrView>k__BackingField: 32B
+    <Material>k__BackingField: {fileID: 2100000, guid: b0f8ab735c4f1044788283f1deecfa4a, type: 2}
+  - <ID>k__BackingField: 6
+    <DigitType>k__BackingField: 3
+    <StrView>k__BackingField: 64B
+    <Material>k__BackingField: {fileID: 2100000, guid: 824627d9a5974404a9d0f02ab5ae259c, type: 2}
+  - <ID>k__BackingField: 7
+    <DigitType>k__BackingField: 3
+    <StrView>k__BackingField: 128B
+    <Material>k__BackingField: {fileID: 2100000, guid: e51dec13e7d173a44b397e3a3ed32357, type: 2}
+  - <ID>k__BackingField: 8
+    <DigitType>k__BackingField: 3
+    <StrView>k__BackingField: 256B
+    <Material>k__BackingField: {fileID: 2100000, guid: 400080b79cead9643a56384883efcfa7, type: 2}
+  - <ID>k__BackingField: 9
+    <DigitType>k__BackingField: 3
+    <StrView>k__BackingField: 512B
+    <Material>k__BackingField: {fileID: 2100000, guid: f313e9c3c8b4bb64ea8c8cef9491ccfe, type: 2}
+  - <ID>k__BackingField: 0
+    <DigitType>k__BackingField: 4
+    <StrView>k__BackingField: 1T
+    <Material>k__BackingField: {fileID: 2100000, guid: 405c0d6e578f8b94e991de66f96a2e0e, type: 2}
+  - <ID>k__BackingField: 1
+    <DigitType>k__BackingField: 4
+    <StrView>k__BackingField: 2T
+    <Material>k__BackingField: {fileID: 2100000, guid: e2df3ca29aeabbd4c984ff34dc05aa45, type: 2}
+  - <ID>k__BackingField: 2
+    <DigitType>k__BackingField: 4
+    <StrView>k__BackingField: 4T
+    <Material>k__BackingField: {fileID: 2100000, guid: fd9b2eb1242a9974ebdc69bbef6267eb, type: 2}
+  - <ID>k__BackingField: 3
+    <DigitType>k__BackingField: 4
+    <StrView>k__BackingField: 8T
+    <Material>k__BackingField: {fileID: 2100000, guid: 7203a39fc26b48d4884a2527a270d65e, type: 2}
+  - <ID>k__BackingField: 4
+    <DigitType>k__BackingField: 4
+    <StrView>k__BackingField: 16T
+    <Material>k__BackingField: {fileID: 2100000, guid: 5e59d82209bb7ab42a8fa9ef7fbde60e, type: 2}
+  - <ID>k__BackingField: 5
+    <DigitType>k__BackingField: 4
+    <StrView>k__BackingField: 32T
+    <Material>k__BackingField: {fileID: 2100000, guid: b0f8ab735c4f1044788283f1deecfa4a, type: 2}
+  - <ID>k__BackingField: 6
+    <DigitType>k__BackingField: 4
+    <StrView>k__BackingField: 64T
+    <Material>k__BackingField: {fileID: 2100000, guid: 824627d9a5974404a9d0f02ab5ae259c, type: 2}
+  - <ID>k__BackingField: 7
+    <DigitType>k__BackingField: 4
+    <StrView>k__BackingField: 128T
+    <Material>k__BackingField: {fileID: 2100000, guid: e51dec13e7d173a44b397e3a3ed32357, type: 2}
+  - <ID>k__BackingField: 8
+    <DigitType>k__BackingField: 4
+    <StrView>k__BackingField: 256T
+    <Material>k__BackingField: {fileID: 2100000, guid: 400080b79cead9643a56384883efcfa7, type: 2}
+  - <ID>k__BackingField: 9
+    <DigitType>k__BackingField: 4
+    <StrView>k__BackingField: 512T
+    <Material>k__BackingField: {fileID: 2100000, guid: f313e9c3c8b4bb64ea8c8cef9491ccfe, type: 2}
+  - <ID>k__BackingField: 0
+    <DigitType>k__BackingField: 5
+    <StrView>k__BackingField: 1q
+    <Material>k__BackingField: {fileID: 2100000, guid: 405c0d6e578f8b94e991de66f96a2e0e, type: 2}
+  - <ID>k__BackingField: 1
+    <DigitType>k__BackingField: 5
+    <StrView>k__BackingField: 2q
+    <Material>k__BackingField: {fileID: 2100000, guid: e2df3ca29aeabbd4c984ff34dc05aa45, type: 2}
+  - <ID>k__BackingField: 2
+    <DigitType>k__BackingField: 5
+    <StrView>k__BackingField: 4q
+    <Material>k__BackingField: {fileID: 2100000, guid: fd9b2eb1242a9974ebdc69bbef6267eb, type: 2}
+  - <ID>k__BackingField: 3
+    <DigitType>k__BackingField: 5
+    <StrView>k__BackingField: 8q
+    <Material>k__BackingField: {fileID: 2100000, guid: 7203a39fc26b48d4884a2527a270d65e, type: 2}
+  - <ID>k__BackingField: 4
+    <DigitType>k__BackingField: 5
+    <StrView>k__BackingField: 16q
+    <Material>k__BackingField: {fileID: 2100000, guid: 5e59d82209bb7ab42a8fa9ef7fbde60e, type: 2}
+  - <ID>k__BackingField: 5
+    <DigitType>k__BackingField: 5
+    <StrView>k__BackingField: 32q
+    <Material>k__BackingField: {fileID: 2100000, guid: b0f8ab735c4f1044788283f1deecfa4a, type: 2}
+  - <ID>k__BackingField: 6
+    <DigitType>k__BackingField: 5
+    <StrView>k__BackingField: 64q
+    <Material>k__BackingField: {fileID: 2100000, guid: 824627d9a5974404a9d0f02ab5ae259c, type: 2}
+  - <ID>k__BackingField: 7
+    <DigitType>k__BackingField: 5
+    <StrView>k__BackingField: 128q
+    <Material>k__BackingField: {fileID: 2100000, guid: e51dec13e7d173a44b397e3a3ed32357, type: 2}
+  - <ID>k__BackingField: 8
+    <DigitType>k__BackingField: 5
+    <StrView>k__BackingField: 256q
+    <Material>k__BackingField: {fileID: 2100000, guid: 400080b79cead9643a56384883efcfa7, type: 2}
+  - <ID>k__BackingField: 9
+    <DigitType>k__BackingField: 5
+    <StrView>k__BackingField: 512q
+    <Material>k__BackingField: {fileID: 2100000, guid: f313e9c3c8b4bb64ea8c8cef9491ccfe, type: 2}
+  - <ID>k__BackingField: 0
+    <DigitType>k__BackingField: 6
+    <StrView>k__BackingField: 1Q
+    <Material>k__BackingField: {fileID: 2100000, guid: 405c0d6e578f8b94e991de66f96a2e0e, type: 2}
+  - <ID>k__BackingField: 1
+    <DigitType>k__BackingField: 6
+    <StrView>k__BackingField: 2Q
+    <Material>k__BackingField: {fileID: 2100000, guid: e2df3ca29aeabbd4c984ff34dc05aa45, type: 2}
+  - <ID>k__BackingField: 2
+    <DigitType>k__BackingField: 6
+    <StrView>k__BackingField: 4Q
+    <Material>k__BackingField: {fileID: 2100000, guid: fd9b2eb1242a9974ebdc69bbef6267eb, type: 2}
+  - <ID>k__BackingField: 3
+    <DigitType>k__BackingField: 6
+    <StrView>k__BackingField: 8Q
+    <Material>k__BackingField: {fileID: 2100000, guid: 7203a39fc26b48d4884a2527a270d65e, type: 2}
+  - <ID>k__BackingField: 4
+    <DigitType>k__BackingField: 6
+    <StrView>k__BackingField: 16Q
+    <Material>k__BackingField: {fileID: 2100000, guid: 5e59d82209bb7ab42a8fa9ef7fbde60e, type: 2}
+  - <ID>k__BackingField: 5
+    <DigitType>k__BackingField: 6
+    <StrView>k__BackingField: 32Q
+    <Material>k__BackingField: {fileID: 2100000, guid: b0f8ab735c4f1044788283f1deecfa4a, type: 2}
+  - <ID>k__BackingField: 6
+    <DigitType>k__BackingField: 6
+    <StrView>k__BackingField: 64Q
+    <Material>k__BackingField: {fileID: 2100000, guid: 824627d9a5974404a9d0f02ab5ae259c, type: 2}
+  - <ID>k__BackingField: 7
+    <DigitType>k__BackingField: 6
+    <StrView>k__BackingField: 128Q
+    <Material>k__BackingField: {fileID: 2100000, guid: e51dec13e7d173a44b397e3a3ed32357, type: 2}
+  - <ID>k__BackingField: 8
+    <DigitType>k__BackingField: 6
+    <StrView>k__BackingField: 256Q
+    <Material>k__BackingField: {fileID: 2100000, guid: 400080b79cead9643a56384883efcfa7, type: 2}
+  - <ID>k__BackingField: 9
+    <DigitType>k__BackingField: 6
+    <StrView>k__BackingField: 512Q
+    <Material>k__BackingField: {fileID: 2100000, guid: f313e9c3c8b4bb64ea8c8cef9491ccfe, type: 2}
+  - <ID>k__BackingField: 0
+    <DigitType>k__BackingField: 7
+    <StrView>k__BackingField: 1s
+    <Material>k__BackingField: {fileID: 2100000, guid: 405c0d6e578f8b94e991de66f96a2e0e, type: 2}
+  - <ID>k__BackingField: 1
+    <DigitType>k__BackingField: 7
+    <StrView>k__BackingField: 2s
+    <Material>k__BackingField: {fileID: 2100000, guid: e2df3ca29aeabbd4c984ff34dc05aa45, type: 2}
+  - <ID>k__BackingField: 2
+    <DigitType>k__BackingField: 7
+    <StrView>k__BackingField: 4s
+    <Material>k__BackingField: {fileID: 2100000, guid: fd9b2eb1242a9974ebdc69bbef6267eb, type: 2}
+  - <ID>k__BackingField: 3
+    <DigitType>k__BackingField: 7
+    <StrView>k__BackingField: 8s
+    <Material>k__BackingField: {fileID: 2100000, guid: 7203a39fc26b48d4884a2527a270d65e, type: 2}
+  - <ID>k__BackingField: 4
+    <DigitType>k__BackingField: 7
+    <StrView>k__BackingField: 16s
+    <Material>k__BackingField: {fileID: 2100000, guid: 5e59d82209bb7ab42a8fa9ef7fbde60e, type: 2}
+  - <ID>k__BackingField: 5
+    <DigitType>k__BackingField: 7
+    <StrView>k__BackingField: 32s
+    <Material>k__BackingField: {fileID: 2100000, guid: b0f8ab735c4f1044788283f1deecfa4a, type: 2}
+  - <ID>k__BackingField: 6
+    <DigitType>k__BackingField: 7
+    <StrView>k__BackingField: 64s
+    <Material>k__BackingField: {fileID: 2100000, guid: 824627d9a5974404a9d0f02ab5ae259c, type: 2}
+  - <ID>k__BackingField: 7
+    <DigitType>k__BackingField: 7
+    <StrView>k__BackingField: 128s
+    <Material>k__BackingField: {fileID: 2100000, guid: e51dec13e7d173a44b397e3a3ed32357, type: 2}
+  - <ID>k__BackingField: 8
+    <DigitType>k__BackingField: 7
+    <StrView>k__BackingField: 256s
+    <Material>k__BackingField: {fileID: 2100000, guid: 400080b79cead9643a56384883efcfa7, type: 2}
+  - <ID>k__BackingField: 9
+    <DigitType>k__BackingField: 7
+    <StrView>k__BackingField: 512s
+    <Material>k__BackingField: {fileID: 2100000, guid: f313e9c3c8b4bb64ea8c8cef9491ccfe, type: 2}
+  - <ID>k__BackingField: 0
+    <DigitType>k__BackingField: 8
+    <StrView>k__BackingField: 1S
+    <Material>k__BackingField: {fileID: 2100000, guid: 405c0d6e578f8b94e991de66f96a2e0e, type: 2}
+  - <ID>k__BackingField: 1
+    <DigitType>k__BackingField: 8
+    <StrView>k__BackingField: 2S
+    <Material>k__BackingField: {fileID: 2100000, guid: e2df3ca29aeabbd4c984ff34dc05aa45, type: 2}
+  - <ID>k__BackingField: 2
+    <DigitType>k__BackingField: 8
+    <StrView>k__BackingField: 4S
+    <Material>k__BackingField: {fileID: 2100000, guid: fd9b2eb1242a9974ebdc69bbef6267eb, type: 2}
+  - <ID>k__BackingField: 3
+    <DigitType>k__BackingField: 8
+    <StrView>k__BackingField: 8S
+    <Material>k__BackingField: {fileID: 2100000, guid: 7203a39fc26b48d4884a2527a270d65e, type: 2}
+  - <ID>k__BackingField: 4
+    <DigitType>k__BackingField: 8
+    <StrView>k__BackingField: 16S
+    <Material>k__BackingField: {fileID: 2100000, guid: 5e59d82209bb7ab42a8fa9ef7fbde60e, type: 2}
+  - <ID>k__BackingField: 5
+    <DigitType>k__BackingField: 8
+    <StrView>k__BackingField: 32S
+    <Material>k__BackingField: {fileID: 2100000, guid: b0f8ab735c4f1044788283f1deecfa4a, type: 2}
+  - <ID>k__BackingField: 6
+    <DigitType>k__BackingField: 8
+    <StrView>k__BackingField: 64S
+    <Material>k__BackingField: {fileID: 2100000, guid: 824627d9a5974404a9d0f02ab5ae259c, type: 2}
+  - <ID>k__BackingField: 7
+    <DigitType>k__BackingField: 8
+    <StrView>k__BackingField: 128S
+    <Material>k__BackingField: {fileID: 2100000, guid: e51dec13e7d173a44b397e3a3ed32357, type: 2}
+  - <ID>k__BackingField: 8
+    <DigitType>k__BackingField: 8
+    <StrView>k__BackingField: 256S
+    <Material>k__BackingField: {fileID: 2100000, guid: 400080b79cead9643a56384883efcfa7, type: 2}
+  - <ID>k__BackingField: 9
+    <DigitType>k__BackingField: 8
+    <StrView>k__BackingField: 512S
+    <Material>k__BackingField: {fileID: 2100000, guid: f313e9c3c8b4bb64ea8c8cef9491ccfe, type: 2}
+  - <ID>k__BackingField: 0
+    <DigitType>k__BackingField: 9
+    <StrView>k__BackingField: 1O
+    <Material>k__BackingField: {fileID: 2100000, guid: 405c0d6e578f8b94e991de66f96a2e0e, type: 2}
+  - <ID>k__BackingField: 1
+    <DigitType>k__BackingField: 9
+    <StrView>k__BackingField: 2O
+    <Material>k__BackingField: {fileID: 2100000, guid: e2df3ca29aeabbd4c984ff34dc05aa45, type: 2}
+  - <ID>k__BackingField: 2
+    <DigitType>k__BackingField: 9
+    <StrView>k__BackingField: 4O
+    <Material>k__BackingField: {fileID: 2100000, guid: fd9b2eb1242a9974ebdc69bbef6267eb, type: 2}
+  - <ID>k__BackingField: 3
+    <DigitType>k__BackingField: 9
+    <StrView>k__BackingField: 8O
+    <Material>k__BackingField: {fileID: 2100000, guid: 7203a39fc26b48d4884a2527a270d65e, type: 2}
+  - <ID>k__BackingField: 4
+    <DigitType>k__BackingField: 9
+    <StrView>k__BackingField: 16O
+    <Material>k__BackingField: {fileID: 2100000, guid: 5e59d82209bb7ab42a8fa9ef7fbde60e, type: 2}
+  - <ID>k__BackingField: 5
+    <DigitType>k__BackingField: 9
+    <StrView>k__BackingField: 32O
+    <Material>k__BackingField: {fileID: 2100000, guid: b0f8ab735c4f1044788283f1deecfa4a, type: 2}
+  - <ID>k__BackingField: 6
+    <DigitType>k__BackingField: 9
+    <StrView>k__BackingField: 64
+    <Material>k__BackingField: {fileID: 2100000, guid: 824627d9a5974404a9d0f02ab5ae259c, type: 2}
+  - <ID>k__BackingField: 7
+    <DigitType>k__BackingField: 9
+    <StrView>k__BackingField: 128O
+    <Material>k__BackingField: {fileID: 2100000, guid: e51dec13e7d173a44b397e3a3ed32357, type: 2}
+  - <ID>k__BackingField: 8
+    <DigitType>k__BackingField: 9
+    <StrView>k__BackingField: 256O
+    <Material>k__BackingField: {fileID: 2100000, guid: 400080b79cead9643a56384883efcfa7, type: 2}
+  - <ID>k__BackingField: 9
+    <DigitType>k__BackingField: 9
+    <StrView>k__BackingField: 512O
+    <Material>k__BackingField: {fileID: 2100000, guid: f313e9c3c8b4bb64ea8c8cef9491ccfe, type: 2}
+  - <ID>k__BackingField: 0
+    <DigitType>k__BackingField: 10
+    <StrView>k__BackingField: 1N
+    <Material>k__BackingField: {fileID: 2100000, guid: 405c0d6e578f8b94e991de66f96a2e0e, type: 2}
+  - <ID>k__BackingField: 1
+    <DigitType>k__BackingField: 10
+    <StrView>k__BackingField: 2N
+    <Material>k__BackingField: {fileID: 2100000, guid: e2df3ca29aeabbd4c984ff34dc05aa45, type: 2}
+  - <ID>k__BackingField: 2
+    <DigitType>k__BackingField: 10
+    <StrView>k__BackingField: 4N
+    <Material>k__BackingField: {fileID: 2100000, guid: fd9b2eb1242a9974ebdc69bbef6267eb, type: 2}
+  - <ID>k__BackingField: 3
+    <DigitType>k__BackingField: 10
+    <StrView>k__BackingField: 8N
+    <Material>k__BackingField: {fileID: 2100000, guid: 7203a39fc26b48d4884a2527a270d65e, type: 2}
+  - <ID>k__BackingField: 4
+    <DigitType>k__BackingField: 10
+    <StrView>k__BackingField: 16N
+    <Material>k__BackingField: {fileID: 2100000, guid: 5e59d82209bb7ab42a8fa9ef7fbde60e, type: 2}
+  - <ID>k__BackingField: 5
+    <DigitType>k__BackingField: 10
+    <StrView>k__BackingField: 32N
+    <Material>k__BackingField: {fileID: 2100000, guid: b0f8ab735c4f1044788283f1deecfa4a, type: 2}
+  - <ID>k__BackingField: 6
+    <DigitType>k__BackingField: 10
+    <StrView>k__BackingField: 64N
+    <Material>k__BackingField: {fileID: 2100000, guid: 824627d9a5974404a9d0f02ab5ae259c, type: 2}
+  - <ID>k__BackingField: 7
+    <DigitType>k__BackingField: 10
+    <StrView>k__BackingField: 128N
+    <Material>k__BackingField: {fileID: 2100000, guid: e51dec13e7d173a44b397e3a3ed32357, type: 2}
+  - <ID>k__BackingField: 8
+    <DigitType>k__BackingField: 10
+    <StrView>k__BackingField: 256N
+    <Material>k__BackingField: {fileID: 2100000, guid: 400080b79cead9643a56384883efcfa7, type: 2}
+  - <ID>k__BackingField: 9
+    <DigitType>k__BackingField: 10
+    <StrView>k__BackingField: 512N
+    <Material>k__BackingField: {fileID: 2100000, guid: f313e9c3c8b4bb64ea8c8cef9491ccfe, type: 2}
+  - <ID>k__BackingField: 0
+    <DigitType>k__BackingField: 11
+    <StrView>k__BackingField: 1D
+    <Material>k__BackingField: {fileID: 2100000, guid: 405c0d6e578f8b94e991de66f96a2e0e, type: 2}
+  - <ID>k__BackingField: 1
+    <DigitType>k__BackingField: 11
+    <StrView>k__BackingField: 2D
+    <Material>k__BackingField: {fileID: 2100000, guid: e2df3ca29aeabbd4c984ff34dc05aa45, type: 2}
+  - <ID>k__BackingField: 2
+    <DigitType>k__BackingField: 11
+    <StrView>k__BackingField: 4D
+    <Material>k__BackingField: {fileID: 2100000, guid: fd9b2eb1242a9974ebdc69bbef6267eb, type: 2}
+  - <ID>k__BackingField: 3
+    <DigitType>k__BackingField: 11
+    <StrView>k__BackingField: 8D
+    <Material>k__BackingField: {fileID: 2100000, guid: 7203a39fc26b48d4884a2527a270d65e, type: 2}
+  - <ID>k__BackingField: 4
+    <DigitType>k__BackingField: 11
+    <StrView>k__BackingField: 16D
+    <Material>k__BackingField: {fileID: 2100000, guid: 5e59d82209bb7ab42a8fa9ef7fbde60e, type: 2}
+  - <ID>k__BackingField: 5
+    <DigitType>k__BackingField: 11
+    <StrView>k__BackingField: 32D
+    <Material>k__BackingField: {fileID: 2100000, guid: b0f8ab735c4f1044788283f1deecfa4a, type: 2}
+  - <ID>k__BackingField: 6
+    <DigitType>k__BackingField: 11
+    <StrView>k__BackingField: 64D
+    <Material>k__BackingField: {fileID: 2100000, guid: 824627d9a5974404a9d0f02ab5ae259c, type: 2}
+  - <ID>k__BackingField: 7
+    <DigitType>k__BackingField: 11
+    <StrView>k__BackingField: 128D
+    <Material>k__BackingField: {fileID: 2100000, guid: e51dec13e7d173a44b397e3a3ed32357, type: 2}
+  - <ID>k__BackingField: 8
+    <DigitType>k__BackingField: 11
+    <StrView>k__BackingField: 256D
+    <Material>k__BackingField: {fileID: 2100000, guid: 400080b79cead9643a56384883efcfa7, type: 2}
+  - <ID>k__BackingField: 9
+    <DigitType>k__BackingField: 11
+    <StrView>k__BackingField: 512D
+    <Material>k__BackingField: {fileID: 2100000, guid: f313e9c3c8b4bb64ea8c8cef9491ccfe, type: 2}
+  - <ID>k__BackingField: 0
+    <DigitType>k__BackingField: 12
+    <StrView>k__BackingField: 1U
+    <Material>k__BackingField: {fileID: 2100000, guid: 405c0d6e578f8b94e991de66f96a2e0e, type: 2}
+  - <ID>k__BackingField: 1
+    <DigitType>k__BackingField: 12
+    <StrView>k__BackingField: 2U
+    <Material>k__BackingField: {fileID: 2100000, guid: e2df3ca29aeabbd4c984ff34dc05aa45, type: 2}
+  - <ID>k__BackingField: 2
+    <DigitType>k__BackingField: 12
+    <StrView>k__BackingField: 4U
+    <Material>k__BackingField: {fileID: 2100000, guid: fd9b2eb1242a9974ebdc69bbef6267eb, type: 2}
+  - <ID>k__BackingField: 3
+    <DigitType>k__BackingField: 12
+    <StrView>k__BackingField: 8U
+    <Material>k__BackingField: {fileID: 2100000, guid: 7203a39fc26b48d4884a2527a270d65e, type: 2}
+  - <ID>k__BackingField: 4
+    <DigitType>k__BackingField: 12
+    <StrView>k__BackingField: 16U
+    <Material>k__BackingField: {fileID: 2100000, guid: 5e59d82209bb7ab42a8fa9ef7fbde60e, type: 2}
+  - <ID>k__BackingField: 5
+    <DigitType>k__BackingField: 12
+    <StrView>k__BackingField: 32U
+    <Material>k__BackingField: {fileID: 2100000, guid: b0f8ab735c4f1044788283f1deecfa4a, type: 2}
+  - <ID>k__BackingField: 6
+    <DigitType>k__BackingField: 12
+    <StrView>k__BackingField: 64U
+    <Material>k__BackingField: {fileID: 2100000, guid: 824627d9a5974404a9d0f02ab5ae259c, type: 2}
+  - <ID>k__BackingField: 7
+    <DigitType>k__BackingField: 12
+    <StrView>k__BackingField: 128U
+    <Material>k__BackingField: {fileID: 2100000, guid: e51dec13e7d173a44b397e3a3ed32357, type: 2}
+  - <ID>k__BackingField: 8
+    <DigitType>k__BackingField: 12
+    <StrView>k__BackingField: 256U
+    <Material>k__BackingField: {fileID: 2100000, guid: 400080b79cead9643a56384883efcfa7, type: 2}
+  - <ID>k__BackingField: 9
+    <DigitType>k__BackingField: 12
+    <StrView>k__BackingField: 512U
+    <Material>k__BackingField: {fileID: 2100000, guid: f313e9c3c8b4bb64ea8c8cef9491ccfe, type: 2}
