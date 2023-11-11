@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class StageDataObject : MonoBehaviour
 {
-
+    [field: SerializeField] public int StageLevel { get; private set; }
 }

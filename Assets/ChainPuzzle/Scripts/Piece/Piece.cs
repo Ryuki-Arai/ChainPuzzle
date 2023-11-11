@@ -14,9 +14,9 @@ public class Piece : MonoBehaviour
 
     public void Initialize(PieceData data)
     {
+        Debug.Log("Init Piece");
         PieceData = data;
         SetData();
-        PieceData.SetData();
     }
     
     public void Select()

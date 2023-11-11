@@ -9,7 +9,6 @@ public class PlayerModel
     public List<Piece> PieceChain = new List<Piece>();
     public List<Vector3> ChainPoint => PieceChain.Select(piece => piece.gameObject.transform.position).ToList();
     private Camera camera;
-    Color selectColor;
 
     public PlayerModel()
     {
@@ -23,7 +22,6 @@ public class PlayerModel
 
     private void CreateChain(Piece piece)
     {
-        Debug.Log($"{piece.PieceData.Data.ID},{piece.PieceData.Data.DigitType}");
         PieceChain.Add(piece);
         piece.Select();
     }
@@ -42,7 +40,7 @@ public class PlayerModel
 
     public void GetPieceItem()
     {
-        Ray raycast = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Ray raycast = camera.ScreenPointToRay(Input.mousePosition);
         Debug.DrawRay(raycast.origin, raycast.direction * 10.0f, Color.red, 3f, false);
         var ray = camera.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;

@@ -22,6 +22,7 @@ public class PieceControlFactory : MonoBehaviour
     public void OnInitialized()
     {
         SetPieceDataArr();
+        CreatePiece(maxSpawn);
     }
 
     public void OnUpdate()
@@ -86,6 +87,17 @@ public class PieceControlFactory : MonoBehaviour
         piece.gameObject.SetActive(false);
         piecePool.Add(piece);
         return piece;
+    }
+
+    private void CreatePiece(int count)
+    {
+        var pieceArr = new Piece[count];
+        for (var i = 0; i < count; i++)
+        {
+            var piece = Instantiate(piecePrefab, spawnParent);
+            piece.gameObject.SetActive(false);
+            piecePool.Add(piece);
+        }
     }
 
     private void ActivePiece(Piece piece)

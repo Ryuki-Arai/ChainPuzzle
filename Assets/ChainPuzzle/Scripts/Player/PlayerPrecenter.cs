@@ -7,8 +7,6 @@ public class PlayerPrecenter : MonoBehaviour
     [SerializeField] private PlayerView view;
     private PlayerModel model;
 
-    [SerializeField] List<Piece> chain;
-
     public void OnInitialized()
     {
         model = new PlayerModel() ;
@@ -27,6 +25,5 @@ public class PlayerPrecenter : MonoBehaviour
             view.DesableChain(model.PieceChain);
             model.RemoveChain();
         }
-        chain = model.PieceChain;
     }
 }
