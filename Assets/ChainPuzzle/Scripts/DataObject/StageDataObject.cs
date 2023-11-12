@@ -2,7 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StageDataObject : MonoBehaviour
+[CreateAssetMenu(fileName = "StageData", menuName = "ScriptableObjects/CreateStageDataObject")]
+public class StageDataObject : ScriptableObject
 {
     [field: SerializeField] public int StageLevel { get; private set; }
+    [field: SerializeField] public PieceDataObject PieceObject { get; private set; }
+    [field: SerializeField] public int StartID { get; private set; }
+    [field: SerializeField] public PieceDigitType StartDigit { get; private set; }
+    [field: SerializeField] public int Index { get; private set; }
+    [field: SerializeField] public Piece PiecePrefab { get; private set; }
+    [field: SerializeField] public int MaxSpawn { get; private set; }
+    [field: SerializeField] public float InactivePosY { get; private set; }
 }

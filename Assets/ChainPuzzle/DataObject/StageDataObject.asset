@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffae18ac8a17415438e6691dfaba49fa, type: 3}
+  m_Name: StageDataObject
+  m_EditorClassIdentifier: 
+  <StageLevel>k__BackingField: 0
+  <PieceObject>k__BackingField: {fileID: 11400000, guid: 282cf6a4e0ab15745957aaed483803b9, type: 2}
+  <StartID>k__BackingField: 0
+  <StartDigit>k__BackingField: 0
+  <Index>k__BackingField: 5
+  <PiecePrefab>k__BackingField: {fileID: 1816495627727886813, guid: 894209f3d086eb243971383b6488c913, type: 3}
+  <MaxSpawn>k__BackingField: 100
+  <InactivePosY>k__BackingField: -5

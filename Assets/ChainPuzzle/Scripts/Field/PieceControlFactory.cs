@@ -7,22 +7,15 @@ using UniRx.Triggers;
 
 public class PieceControlFactory : MonoBehaviour
 {
-    [SerializeField] PieceDataObject pieceObject;
-    [SerializeField] int startID;
-    [SerializeField] PieceDigitType startDigit;
-    [SerializeField] int index;
-    [SerializeField] Piece piecePrefab;
-    [SerializeField] Transform spawnParent;
-    [SerializeField] int maxSpawn;
-    [SerializeField] float inactivePosY;
-
+    [SerializeField] private StageDataObject stageData;
+    [SerializeField] private Transform spawnParent;
     [SerializeField] private PieceData[] pieceDataArr;
     private List<Piece> piecePool = new List<Piece>();
 
     public void OnInitialized()
     {
         SetPieceDataArr();
-        CreatePiece(maxSpawn);
+        CreatePiece(stageData.MaxSpawn);
     }
 
     public void OnUpdate()
@@ -40,25 +33,25 @@ public class PieceControlFactory : MonoBehaviour
     private void PieceSafety()
     {
         var offStagePieces = piecePool
-            .Where(piece => piece.gameObject.transform.position.y < inactivePosY && piece.gameObject.activeSelf).ToList();
+            .Where(piece => piece.gameObject.transform.position.y < stageData.InactivePosY && piece.gameObject.activeSelf).ToList();
 
         offStagePieces.ForEach(piece => InactivePiece(piece));
     }
 
     private void SetPieceDataArr()
     {
-        var startDataIndex = pieceObject.GetPieceDataIndex(startID, startDigit);
+        var startDataIndex = stageData.PieceObject.GetPieceDataIndex(stageData.StartID, stageData.StartDigit);
         var DataList = new List<PieceData>();
-        for(var i = startDataIndex; i < startDataIndex + index; i++)
+        for(var i = startDataIndex; i < startDataIndex + stageData.Index; i++)
         {
-            DataList.Add(pieceObject.DataArr[i]);
+            DataList.Add(stageData.PieceObject.DataArr[i]);
         }
         pieceDataArr = DataList.ToArray();
     }
 
     private void SpawnPiece()
     {
-        if(piecePool.Where(piece => piece.gameObject.activeSelf).ToList().Count >= maxSpawn)
+        if(piecePool.Where(piece => piece.gameObject.activeSelf).ToList().Count >= stageData.MaxSpawn)
         {
             return;
         }
@@ -83,7 +76,7 @@ public class PieceControlFactory : MonoBehaviour
 
     private Piece CreatePiece()
     {
-        var piece = Instantiate(piecePrefab,spawnParent);
+        var piece = Instantiate(stageData.PiecePrefab, spawnParent);
         piece.gameObject.SetActive(false);
         piecePool.Add(piece);
         return piece;
@@ -94,7 +87,7 @@ public class PieceControlFactory : MonoBehaviour
         var pieceArr = new Piece[count];
         for (var i = 0; i < count; i++)
         {
-            var piece = Instantiate(piecePrefab, spawnParent);
+            var piece = Instantiate(stageData.PiecePrefab, spawnParent);
             piece.gameObject.SetActive(false);
             piecePool.Add(piece);
         }
