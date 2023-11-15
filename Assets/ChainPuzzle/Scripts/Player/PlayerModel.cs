@@ -32,7 +32,6 @@ public class PlayerModel
             && PieceChain[0].PieceData.DigitType == piece.PieceData.DigitType
             && !PieceChain.Contains(piece))
         {
-            Debug.Log($"{PieceChain[0].PieceData.ID == piece.PieceData.ID}, {PieceChain[0].PieceData.DigitType == piece.PieceData.DigitType}");
             PieceChain.Add(piece);
             piece.Select();
         }
