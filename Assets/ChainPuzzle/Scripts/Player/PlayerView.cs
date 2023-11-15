@@ -16,9 +16,13 @@ public class PlayerView : MonoBehaviour
         lineRenderer.endWidth = lineWidth;
     }
 
-    public void DesableChain(List<Piece> pieceList)
+    public void DisableChain(List<Piece> pieceList)
     {
-        DesablePieces(pieceList);
+        pieceList.ForEach(p => p.Unselect());
+        if (pieceList.Count >= DataManager.Instance.ChainDataObject.MinLength)
+        {
+            DisablePieces(pieceList);
+        }
         ClearLinePoints();
     }
 
@@ -29,7 +33,7 @@ public class PlayerView : MonoBehaviour
         lineRenderer.SetPositions(positions);
     }
 
-    private void DesablePieces(List<Piece> pieceList)
+    private void DisablePieces(List<Piece> pieceList)
     {
         foreach (var piece in pieceList)
         {

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc3479ed901f90647aaf7ff3969c8dc4, type: 3}
   m_Name: PieceDataObject
   m_EditorClassIdentifier: 
-  dataArr:
+  <DataArr>k__BackingField:
   - <ID>k__BackingField: 0
     <DigitType>k__BackingField: 0
     <StrView>k__BackingField: 1

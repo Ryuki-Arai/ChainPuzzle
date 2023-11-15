@@ -33,12 +33,16 @@ public class Piece : MonoBehaviour
         outline.material.EnableKeyword("_EMISSION");
     }
 
+    public void Unselect()
+    {
+        outline.material.DisableKeyword("_EMISSION");
+    }
+
     private void SetData()
     {
         text.text = PieceData.StrView;
         mesh.material = PieceData.Material;
         //outline.material.color = Color.black;
-        outline.material.DisableKeyword("_EMISSION");
     }
 }
 

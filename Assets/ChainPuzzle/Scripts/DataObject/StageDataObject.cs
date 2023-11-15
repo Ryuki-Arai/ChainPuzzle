@@ -6,7 +6,6 @@ using UnityEngine;
 public class StageDataObject : ScriptableObject
 {
     [field: SerializeField] public int StageLevel { get; private set; }
-    [field: SerializeField] public PieceDataObject PieceObject { get; private set; }
     [field: SerializeField] public int StartID { get; private set; }
     [field: SerializeField] public PieceDigitType StartDigit { get; private set; }
     [field: SerializeField] public int Index { get; private set; }

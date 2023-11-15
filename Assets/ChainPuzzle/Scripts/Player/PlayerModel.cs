@@ -38,6 +38,11 @@ public class PlayerModel
         }
     }
 
+    private bool CheckDistance(Vector3 piecePosition)
+    {
+        return DataManager.Instance.ChainDataObject.ChainDistance >= Vector3.Distance(PieceChain.Last().gameObject.transform.position,piecePosition);
+    }
+
     public void GetPieceItem()
     {
         Ray raycast = camera.ScreenPointToRay(Input.mousePosition);
@@ -56,7 +61,7 @@ public class PlayerModel
                 }
                 else
                 {
-                    AddChain(piece);
+                    if(CheckDistance(piece.gameObject.transform.position)) AddChain(piece);
                 }
             }
         }

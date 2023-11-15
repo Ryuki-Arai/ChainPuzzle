@@ -5,20 +5,19 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "PieceData", menuName = "ScriptableObjects/CreatePieceDataObject")]
 public class PieceDataObject : ScriptableObject
 {
-    [SerializeField] private PieceData[] dataArr;
-    public PieceData[] DataArr => dataArr;
+    [field: SerializeField] public PieceData[] DataArr { get; private set; }
 
     public int GetPieceDataIndex(int id, PieceDigitType type)
     {
-        for(var i = 0; i < dataArr.Length; i++)
+        for(var i = 0; i < DataArr.Length; i++)
         {
-            if(dataArr[i].ID == id && dataArr[i].DigitType == type)
+            if(DataArr[i].ID == id && DataArr[i].DigitType == type)
             {
                 return i;
             }
         }
 
-        Debug.LogError($"IDが{id}でTypeが{type.ToString()}のピースが見つかりませんでした");
+        Debug.LogError($"IDが{id}でTypeが{type}のピースが見つかりませんでした");
         return -1;
     }
 }

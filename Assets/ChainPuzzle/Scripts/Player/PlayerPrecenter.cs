@@ -22,7 +22,7 @@ public class PlayerPrecenter : MonoBehaviour
         }
         else if (Input.GetMouseButtonUp(0))
         {
-            view.DesableChain(model.PieceChain);
+            view.DisableChain(model.PieceChain);
             model.RemoveChain();
         }
     }
