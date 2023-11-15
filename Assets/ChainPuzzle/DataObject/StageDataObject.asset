@@ -19,4 +19,4 @@ MonoBehaviour:
   <Index>k__BackingField: 5
   <PiecePrefab>k__BackingField: {fileID: 1816495627727886813, guid: 894209f3d086eb243971383b6488c913, type: 3}
   <MaxSpawn>k__BackingField: 100
-  <InactivePosY>k__BackingField: -5
+  <InactivePosY>k__BackingField: -6.5
