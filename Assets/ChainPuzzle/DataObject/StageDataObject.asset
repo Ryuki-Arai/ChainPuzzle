@@ -13,10 +13,13 @@ MonoBehaviour:
   m_Name: StageDataObject
   m_EditorClassIdentifier: 
   <StageLevel>k__BackingField: 0
-  <PieceObject>k__BackingField: {fileID: 11400000, guid: 282cf6a4e0ab15745957aaed483803b9, type: 2}
   <StartID>k__BackingField: 0
   <StartDigit>k__BackingField: 0
   <Index>k__BackingField: 5
   <PiecePrefab>k__BackingField: {fileID: 1816495627727886813, guid: 894209f3d086eb243971383b6488c913, type: 3}
   <MaxSpawn>k__BackingField: 100
   <InactivePosY>k__BackingField: -6.5
+  <ClearPieceData>k__BackingField:
+  - <PieceID>k__BackingField: 0
+    <PieceType>k__BackingField: 0
+    <PieceCount>k__BackingField: 0

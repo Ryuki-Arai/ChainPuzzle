@@ -12,4 +12,5 @@ public class StageDataObject : ScriptableObject
     [field: SerializeField] public Piece PiecePrefab { get; private set; }
     [field: SerializeField] public int MaxSpawn { get; private set; }
     [field: SerializeField] public float InactivePosY { get; private set; }
+    [field: SerializeField] public FieldPieceData[] ClearPieceData { get; private set; }
 }
