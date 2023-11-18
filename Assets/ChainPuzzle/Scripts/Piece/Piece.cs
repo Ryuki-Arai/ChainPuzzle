@@ -28,20 +28,20 @@ public class Piece : MonoBehaviour
     
     public void Select()
     {
-        //outline.material.color = Color.yellow;
-        outline.material.EnableKeyword("_EMISSION");
+        outline.material.color = Color.yellow;
+        //outline.material.EnableKeyword("_EMISSION");
     }
 
     public void Unselect()
     {
-        outline.material.DisableKeyword("_EMISSION");
+        outline.material.color = Color.black;
+        //outline.material.DisableKeyword("_EMISSION");
     }
 
     private void SetData()
     {
         text.text = PieceData.StrView;
         mesh.material = PieceData.Material;
-        //outline.material.color = Color.black;
     }
 }
 
