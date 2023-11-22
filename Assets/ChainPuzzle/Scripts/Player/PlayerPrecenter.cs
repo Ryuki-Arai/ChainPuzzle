@@ -5,12 +5,14 @@ using UnityEngine;
 public class PlayerPrecenter : MonoBehaviour
 {
     [SerializeField] private PlayerView view;
+    [SerializeField] private MissionPrecenter mission;
     private PlayerModel model;
 
     public void OnInitialized()
     {
         model = new PlayerModel() ;
         view.SetUp();
+        mission.OnInitialized();
     }
 
     public void OnUpdate()

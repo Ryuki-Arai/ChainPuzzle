@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: ChainDataObject
   m_EditorClassIdentifier: 
   <MinLength>k__BackingField: 3
-  <ChainDistance>k__BackingField: 2
+  <ChainDistance>k__BackingField: 2.5

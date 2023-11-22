@@ -8,7 +8,7 @@ using UniRx.Triggers;
 public class PieceControlFactory : MonoBehaviour
 {
     //[SerializeField] private StageDataObject StageDataObject;
-    [SerializeField] private Transform spawnParent;
+    [SerializeField] private Transform spawnPoint;
     [SerializeField] private PieceData[] pieceDataArr;
     private List<Piece> piecePool = new List<Piece>();
 
@@ -79,7 +79,7 @@ public class PieceControlFactory : MonoBehaviour
 
     private Piece CreatePiece()
     {
-        var piece = Instantiate(DataManager.Instance.StageDataObject.PiecePrefab, spawnParent);
+        var piece = Instantiate(DataManager.Instance.StageDataObject.PiecePrefab, spawnPoint.position,Quaternion.identity);
         piece.gameObject.SetActive(false);
         piecePool.Add(piece);
         return piece;
@@ -90,7 +90,7 @@ public class PieceControlFactory : MonoBehaviour
         var pieceArr = new Piece[count];
         for (var i = 0; i < count; i++)
         {
-            var piece = Instantiate(DataManager.Instance.StageDataObject.PiecePrefab, spawnParent);
+            var piece = Instantiate(DataManager.Instance.StageDataObject.PiecePrefab, spawnPoint.position, Quaternion.identity);
             piece.gameObject.SetActive(false);
             piecePool.Add(piece);
         }
@@ -99,7 +99,7 @@ public class PieceControlFactory : MonoBehaviour
     private void ActivePiece(Piece piece)
     {
         piece.Initialize(GetPieceData());
-        piece.gameObject.transform.position = spawnParent.position;
+        piece.gameObject.transform.position = GetRandomPos(spawnPoint.position, spawnPoint.localScale);
         piece.gameObject.SetActive(true);
     }
 
@@ -111,5 +111,15 @@ public class PieceControlFactory : MonoBehaviour
     private PieceData GetPieceData()
     {
         return pieceDataArr[Random.Range(0, pieceDataArr.Length - 1)];
+    }
+
+    private Vector3 GetRandomPos(Vector3 position, Vector3 scale)
+    {
+        var min = position - scale / 2;
+        var max = position + scale / 2;
+        var x = Random.Range(min.x, max.x);
+        var y = Random.Range(min.y, max.y);
+
+        return new Vector3(x, y, position.z);
     }
 }

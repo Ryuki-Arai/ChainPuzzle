@@ -10,5 +10,6 @@ public class MissionPrecenter : MonoBehaviour
     public void OnInitialized()
     {
         model = new MissionModel(DataManager.Instance.StageDataObject.ClearPieceData);
+        view.SetUp(model.MisionDataArr);
     }
 }
