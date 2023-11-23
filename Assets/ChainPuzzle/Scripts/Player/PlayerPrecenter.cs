@@ -25,6 +25,10 @@ public class PlayerPrecenter : MonoBehaviour
         else if (Input.GetMouseButtonUp(0))
         {
             view.DisableChain(model.PieceChain);
+            if (model.IsCriteriaMet)
+            {
+                mission.ProgressMission(model.ChainData, model.PieceChain.Count);
+            }
             model.RemoveChain();
         }
     }

@@ -15,6 +15,25 @@ public class MissionModel
         SetMissionData(dataArr);
     }
 
+    public bool TryGetData(PieceData pieceData, out MissionData missionData)
+    {
+        foreach(var mission in missionDataList)
+        {
+            if(mission.PieceData == pieceData)
+            {
+                missionData = mission;
+                return true;
+            }
+        }
+        missionData = null;
+        return false;
+    }
+
+    public void PrigressData(MissionData data, int count)
+    {
+        data.MinusCount(count);
+    }
+
     private void SetMissionData(FieldPieceData[] dataArr)
     {
         for(int i = 0; i < dataArr.Length; i++)

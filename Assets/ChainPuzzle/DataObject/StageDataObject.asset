@@ -20,6 +20,6 @@ MonoBehaviour:
   <MaxSpawn>k__BackingField: 70
   <InactivePosY>k__BackingField: -10
   <ClearPieceData>k__BackingField:
-  - <PieceID>k__BackingField: 9
-    <PieceType>k__BackingField: 12
-    <PieceCount>k__BackingField: 10
+  - <PieceID>k__BackingField: 2
+    <PieceType>k__BackingField: 0
+    <PieceCount>k__BackingField: 20

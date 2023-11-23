@@ -12,4 +12,16 @@ public class MissionPrecenter : MonoBehaviour
         model = new MissionModel(DataManager.Instance.StageDataObject.ClearPieceData);
         view.SetUp(model.MisionDataArr);
     }
+
+    public void ProgressMission(PieceData data , int count)
+    {
+        if(!model.TryGetData(data, out var missionData))
+        {
+            return;
+        }
+
+        model.PrigressData(missionData, count);
+
+        view.UpdateMission(missionData);
+    }
 }

@@ -18,6 +18,12 @@ public class Mission : MonoBehaviour
         SetMission();
     }
 
+    public void UpdateData(MissionData data)
+    {
+        Data = data;
+        SetMission();
+    }
+
     private void SetMission()
     {
         Debug.Log($"Data.PieceData.StrView:{Data.PieceData.StrView}");

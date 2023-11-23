@@ -15,4 +15,14 @@ public class MissionData
         PieceData = data;
         Count = count;
     }
+
+    public void MinusCount(int count)
+    {
+        Count -= count;
+    }
+
+    public void PulsCount(int count)
+    {
+        Count += count;
+    }
 }
