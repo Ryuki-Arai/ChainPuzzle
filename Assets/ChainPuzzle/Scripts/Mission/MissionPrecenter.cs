@@ -22,6 +22,11 @@ public class MissionPrecenter : MonoBehaviour
 
         model.PrigressData(missionData, count);
 
+        if (model.IsClear(data))
+        {
+            view.ClearMission(missionData);
+        }
+
         view.UpdateMission(missionData);
     }
 }

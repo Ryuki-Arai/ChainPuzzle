@@ -34,6 +34,17 @@ public class MissionModel
         data.MinusCount(count);
     }
 
+    public bool IsClear(PieceData data)
+    {
+        if(TryGetData(data, out var mission))
+        {
+            return mission.Count <= 0;
+        }
+
+        return false;
+
+    }
+
     private void SetMissionData(FieldPieceData[] dataArr)
     {
         for(int i = 0; i < dataArr.Length; i++)

@@ -24,6 +24,15 @@ public class MiissionView : MonoBehaviour
         }
     }
 
+    public void ClearMission(MissionData data)
+    {
+        var mission = TrySarchData(data);
+        if (mission != null)
+        {
+            mission.OnClear();
+        }
+    }
+
     private Mission TrySarchData(MissionData data)
     {
         foreach(var mission in dataList)
