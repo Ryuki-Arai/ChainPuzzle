@@ -4,32 +4,40 @@ using UnityEngine;
 using UniRx;
 using UniRx.Triggers;
 
-public class MainPrecenter : SingletonMonoBehaviour<MainPrecenter>
+namespace InGame
 {
-    [SerializeField] private MainView view;
-    private MainModel model;
-
-    protected override void Awake()
+    public class MainPrecenter : SingletonMonoBehaviour<MainPrecenter>
     {
-        base.Awake();
-        Initialize();
-    }
+        [SerializeField] private MainView view;
+        private MainModel model;
 
-    private void Initialize()
-    {
-        view.SetUp();
-        model = new MainModel();
-        this.UpdateAsObservable()
-            .Subscribe(_ => OnUpdate());
-    }
+        protected override void Awake()
+        {
+            base.Awake();
+            Initialize();
+        }
 
-    private void OnUpdate()
-    {
-        view.OnUpdate();
-    }
+        private void Initialize()
+        {
+            view.SetUp();
+            model = new MainModel();
+            this.UpdateAsObservable()
+                .Subscribe(_ => OnUpdate());
+        }
 
-    public void OnClear()
-    {
-        view.OnGameClear();
+        private void OnUpdate()
+        {
+            view.OnUpdate();
+        }
+
+        public void OnClear()
+        {
+            view.OnGameClear();
+        }
+
+        public void OnFaild()
+        {
+            view.OnGameOver();
+        }
     }
 }

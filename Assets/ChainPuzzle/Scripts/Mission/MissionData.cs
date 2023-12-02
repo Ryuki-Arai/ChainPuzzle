@@ -3,26 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-[Serializable]
-public class MissionData
+namespace InGame
 {
-    public PieceData PieceData { get; private set; }
-
-    public int Count { get; private set; }
-
-    public MissionData(PieceData data, int count)
+    [Serializable]
+    public class MissionData
     {
-        PieceData = data;
-        Count = count;
-    }
+        public PieceData PieceData { get; private set; }
 
-    public void MinusCount(int count)
-    {
-        Count -= count;
-    }
+        public int Count { get; private set; }
 
-    public void PulsCount(int count)
-    {
-        Count += count;
+        public MissionData(PieceData data, int count)
+        {
+            PieceData = data;
+            Count = count;
+        }
+
+        public void MinusCount(int count)
+        {
+            Count -= count;
+        }
+
+        public void PulsCount(int count)
+        {
+            Count += count;
+        }
     }
 }

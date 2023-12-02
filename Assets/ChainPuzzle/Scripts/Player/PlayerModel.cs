@@ -3,73 +3,76 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-public class PlayerModel
+namespace InGame
 {
-
-    public List<Piece> PieceChain = new List<Piece>();
-    public List<Vector3> ChainPoint => PieceChain.Select(piece => piece.gameObject.transform.position).ToList();
-    public bool IsDeleteLength => PieceChain.Count >= DataManager.Instance.ChainDataObject.MinLength;
-    public PieceData ChainData => PieceChain[0].PieceData;
-    private Camera camera;
-
-    public PlayerModel()
+    public class PlayerModel
     {
-        OnInitialized();
-    }
 
-    private void OnInitialized()
-    {
-        camera = Camera.main;
-    }
+        public List<Piece> PieceChain = new List<Piece>();
+        public List<Vector3> ChainPoint => PieceChain.Select(piece => piece.gameObject.transform.position).ToList();
+        public bool IsDeleteLength => PieceChain.Count >= DataManager.Instance.ChainDataObject.MinLength;
+        public PieceData ChainData => PieceChain[0].PieceData;
+        private Camera camera;
 
-    private void CreateChain(Piece piece)
-    {
-        PieceChain.Add(piece);
-        piece.Select();
-    }
+        public PlayerModel()
+        {
+            OnInitialized();
+        }
 
-    private void AddChain(Piece piece)
-    {
-        if (PieceChain[0].PieceData.ID == piece.PieceData.ID
-            && PieceChain[0].PieceData.DigitType == piece.PieceData.DigitType
-            && !PieceChain.Contains(piece))
+        private void OnInitialized()
+        {
+            camera = Camera.main;
+        }
+
+        private void CreateChain(Piece piece)
         {
             PieceChain.Add(piece);
             piece.Select();
         }
-    }
 
-    private bool CheckDistance(Vector3 piecePosition)
-    {
-        return DataManager.Instance.ChainDataObject.ChainDistance >= Vector3.Distance(PieceChain.Last().gameObject.transform.position,piecePosition);
-    }
-
-    public void GetPieceItem()
-    {
-        Ray raycast = camera.ScreenPointToRay(Input.mousePosition);
-        Debug.DrawRay(raycast.origin, raycast.direction * 10.0f, Color.red, 3f, false);
-        var ray = camera.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit,10.0f))
+        private void AddChain(Piece piece)
         {
-            var go = hit.collider.gameObject;
-            Piece piece;
-            if(go.TryGetComponent(out piece))
+            if (PieceChain[0].PieceData.ID == piece.PieceData.ID
+                && PieceChain[0].PieceData.DigitType == piece.PieceData.DigitType
+                && !PieceChain.Contains(piece))
             {
-                if(PieceChain.Count == 0)
+                PieceChain.Add(piece);
+                piece.Select();
+            }
+        }
+
+        private bool CheckDistance(Vector3 piecePosition)
+        {
+            return DataManager.Instance.ChainDataObject.ChainDistance >= Vector3.Distance(PieceChain.Last().gameObject.transform.position, piecePosition);
+        }
+
+        public void GetPieceItem()
+        {
+            Ray raycast = camera.ScreenPointToRay(Input.mousePosition);
+            Debug.DrawRay(raycast.origin, raycast.direction * 10.0f, Color.red, 3f, false);
+            var ray = camera.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit, 10.0f))
+            {
+                var go = hit.collider.gameObject;
+                Piece piece;
+                if (go.TryGetComponent(out piece))
                 {
-                    CreateChain(piece);
-                }
-                else
-                {
-                    if(CheckDistance(piece.gameObject.transform.position)) AddChain(piece);
+                    if (PieceChain.Count == 0)
+                    {
+                        CreateChain(piece);
+                    }
+                    else
+                    {
+                        if (CheckDistance(piece.gameObject.transform.position)) AddChain(piece);
+                    }
                 }
             }
         }
-    }
 
-    public void RemoveChain()
-    {
-        PieceChain.Clear();
+        public void RemoveChain()
+        {
+            PieceChain.Clear();
+        }
     }
 }

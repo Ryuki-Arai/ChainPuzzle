@@ -3,68 +3,71 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class MissionModel
+namespace InGame
 {
-    public MissionData[] MisionDataArr => missionDataList.ToArray();
-
-    private List<MissionData> missionDataList;
-
-
-    public MissionModel(FieldPieceData[] dataArr)
+    public class MissionModel
     {
-        missionDataList = new List<MissionData>();
-        SetMissionData(dataArr);
-    }
+        public MissionData[] MisionDataArr => missionDataList.ToArray();
 
-    public bool TryGetData(PieceData pieceData, out MissionData missionData)
-    {
-        foreach(var mission in missionDataList)
+        private List<MissionData> missionDataList;
+
+
+        public MissionModel(FieldPieceData[] dataArr)
         {
-            if(mission.PieceData == pieceData)
-            {
-                missionData = mission;
-                return true;
-            }
-        }
-        missionData = null;
-        return false;
-    }
-
-    public void PrigressData(MissionData data, int count)
-    {
-        data.MinusCount(count);
-    }
-
-    public bool IsClear(PieceData data)
-    {
-        if(TryGetData(data, out var mission))
-        {
-            return mission.Count <= 0;
+            missionDataList = new List<MissionData>();
+            SetMissionData(dataArr);
         }
 
-        return false;
-
-    }
-
-    public bool IsAllClear()
-    {
-        return missionDataList.All(data => data.Count <= 0);
-    }
-
-    private void SetMissionData(FieldPieceData[] dataArr)
-    {
-        for(int i = 0; i < dataArr.Length; i++)
+        public bool TryGetData(PieceData pieceData, out MissionData missionData)
         {
-            var data = dataArr[i];
-            var pieceData = data.PieceData;
-            var count = data.PieceCount;
-            var mission = new MissionData(pieceData, count);
-            if (missionDataList.Contains(mission))
+            foreach (var mission in missionDataList)
             {
-                Debug.LogError("ミッションが重複しています");
-                continue;
+                if (mission.PieceData == pieceData)
+                {
+                    missionData = mission;
+                    return true;
+                }
             }
-            missionDataList.Add(mission);
+            missionData = null;
+            return false;
+        }
+
+        public void PrigressData(MissionData data, int count)
+        {
+            data.MinusCount(count);
+        }
+
+        public bool IsClear(PieceData data)
+        {
+            if (TryGetData(data, out var mission))
+            {
+                return mission.Count <= 0;
+            }
+
+            return false;
+
+        }
+
+        public bool IsAllClear()
+        {
+            return missionDataList.All(data => data.Count <= 0);
+        }
+
+        private void SetMissionData(FieldPieceData[] dataArr)
+        {
+            for (int i = 0; i < dataArr.Length; i++)
+            {
+                var data = dataArr[i];
+                var pieceData = data.PieceData;
+                var count = data.PieceCount;
+                var mission = new MissionData(pieceData, count);
+                if (missionDataList.Contains(mission))
+                {
+                    Debug.LogError("ミッションが重複しています");
+                    continue;
+                }
+                missionDataList.Add(mission);
+            }
         }
     }
 }

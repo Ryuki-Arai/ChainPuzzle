@@ -2,27 +2,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MainView : MonoBehaviour
+namespace InGame
 {
-    [SerializeField] PlayerPrecenter player;
-    [SerializeField] PieceControlFactory factory;
-    [SerializeField] ClearDialog clearDialog;
-
-    public void SetUp()
+    public class MainView : MonoBehaviour
     {
-        player.OnInitialized();
-        factory.OnInitialized();
-        clearDialog.SetUp();
-    }
+        [SerializeField] PlayerPrecenter player;
+        [SerializeField] PieceControlFactory factory;
+        [SerializeField] ClearDialog clearDialog;
 
-    public void OnUpdate()
-    {
-        player.OnUpdate();
-        factory.OnUpdate();
-    }
+        public void SetUp()
+        {
+            player.OnInitialized();
+            factory.OnInitialized();
+            clearDialog.SetUp();
+        }
 
-    public void OnGameClear()
-    {
-        clearDialog.ShowDialog();
+        public void OnUpdate()
+        {
+            player.OnUpdate();
+            factory.OnUpdate();
+        }
+
+        public void OnGameClear()
+        {
+            clearDialog.ShowDialog();
+        }
+
+        public void OnGameOver()
+        {
+            Debug.Log("GameOver");
+        }
     }
 }

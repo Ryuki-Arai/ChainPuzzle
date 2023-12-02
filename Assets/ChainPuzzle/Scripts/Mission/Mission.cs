@@ -4,38 +4,41 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Mission : MonoBehaviour
+namespace InGame
 {
-    [SerializeField] private TMP_Text pieceText;
-    [SerializeField] private Image image;
-    [SerializeField] private TMP_Text countText;
-    [SerializeField] private Image check;
-
-    public MissionData Data { get ; private set; }
-
-    public void SetUp(MissionData data)
+    public class Mission : MonoBehaviour
     {
-        Data = data;
-        check.enabled = false;
-        SetMission();
-    }
+        [SerializeField] private TMP_Text pieceText;
+        [SerializeField] private Image image;
+        [SerializeField] private TMP_Text countText;
+        [SerializeField] private Image check;
 
-    public void UpdateData(MissionData data)
-    {
-        Data = data;
-        SetMission();
-    }
+        public MissionData Data { get; private set; }
 
-    public void OnClear()
-    {
-        countText.enabled = false;
-        check.enabled = true;
-    }
+        public void SetUp(MissionData data)
+        {
+            Data = data;
+            check.enabled = false;
+            SetMission();
+        }
 
-    private void SetMission()
-    {
-        pieceText.text = Data.PieceData.StrView;
-        image.color = Data.PieceData.Material.color;
-        countText.text = Data.Count.ToString();
+        public void UpdateData(MissionData data)
+        {
+            Data = data;
+            SetMission();
+        }
+
+        public void OnClear()
+        {
+            countText.enabled = false;
+            check.enabled = true;
+        }
+
+        private void SetMission()
+        {
+            pieceText.text = Data.PieceData.StrView;
+            image.color = Data.PieceData.Material.color;
+            countText.text = Data.Count.ToString();
+        }
     }
 }

@@ -3,25 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-[Serializable]
-public class FieldPieceData
+namespace InGame
 {
-    [field: SerializeField] public int PieceID { get; private set; }
-    [field: SerializeField] public PieceDigitType PieceType { get; private set; }
-    [field: SerializeField] public int PieceCount { get; private set; }
-
-    public PieceData PieceData => GetPieceData();
-
-    public FieldPieceData(int ID, PieceDigitType Type, int Count)
+    [Serializable]
+    public class FieldPieceData
     {
-        PieceID = ID;
-        PieceType = Type;
-        PieceCount = Count;
-    }
+        [field: SerializeField] public int PieceID { get; private set; }
+        [field: SerializeField] public PieceDigitType PieceType { get; private set; }
+        [field: SerializeField] public int PieceCount { get; private set; }
 
-    private PieceData GetPieceData()
-    {
-        var index = DataManager.Instance.PieceDataObject.GetPieceDataIndex(PieceID, PieceType);
-        return DataManager.Instance.PieceDataObject.DataArr[index];
+        public PieceData PieceData => GetPieceData();
+
+        public FieldPieceData(int ID, PieceDigitType Type, int Count)
+        {
+            PieceID = ID;
+            PieceType = Type;
+            PieceCount = Count;
+        }
+
+        private PieceData GetPieceData()
+        {
+            var index = DataManager.Instance.PieceDataObject.GetPieceDataIndex(PieceID, PieceType);
+            return DataManager.Instance.PieceDataObject.DataArr[index];
+        }
     }
 }

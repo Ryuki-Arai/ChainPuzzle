@@ -5,43 +5,45 @@ using TMPro;
 using UnityEngine;
 using UnityFx.Outline;
 
-public class Piece : MonoBehaviour
+namespace InGame
 {
-    [SerializeField] private TMP_Text text;
-    [SerializeField] private Renderer mesh;
-    [SerializeField] private MeshRenderer outline;
-    [SerializeField] private MeshFilter outlineMesh;
-    public PieceData PieceData { get; private set; }
+    public class Piece : MonoBehaviour
+    {
+        [SerializeField] private TMP_Text text;
+        [SerializeField] private Renderer mesh;
+        [SerializeField] private MeshRenderer outline;
+        [SerializeField] private MeshFilter outlineMesh;
+        public PieceData PieceData { get; private set; }
 
-    private void Awake()
-    {
-        var Mesh = Instantiate(outlineMesh.sharedMesh);
-        Mesh.triangles = Mesh.triangles.Reverse().ToArray();
-        outlineMesh.sharedMesh = Mesh;
-    }
+        private void Awake()
+        {
+            var Mesh = Instantiate(outlineMesh.sharedMesh);
+            Mesh.triangles = Mesh.triangles.Reverse().ToArray();
+            outlineMesh.sharedMesh = Mesh;
+        }
 
-    public void Initialize(PieceData data)
-    {
-        PieceData = data;
-        SetData();
-    }
-    
-    public void Select()
-    {
-        outline.material.color = Color.yellow;
-        //outline.material.EnableKeyword("_EMISSION");
-    }
+        public void Initialize(PieceData data)
+        {
+            PieceData = data;
+            SetData();
+        }
 
-    public void Unselect()
-    {
-        outline.material.color = Color.black;
-        //outline.material.DisableKeyword("_EMISSION");
-    }
+        public void Select()
+        {
+            outline.material.color = Color.yellow;
+            //outline.material.EnableKeyword("_EMISSION");
+        }
 
-    private void SetData()
-    {
-        text.text = PieceData.StrView;
-        mesh.material = PieceData.Material;
+        public void Unselect()
+        {
+            outline.material.color = Color.black;
+            //outline.material.DisableKeyword("_EMISSION");
+        }
+
+        private void SetData()
+        {
+            text.text = PieceData.StrView;
+            mesh.material = PieceData.Material;
+        }
     }
 }
-

@@ -2,33 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MissionPrecenter : MonoBehaviour
+namespace InGame
 {
-    [SerializeField] private MiissionView view;
-    private MissionModel model;
-
-    public bool IsAllClear => model.IsAllClear();
-
-    public void OnInitialized()
+    public class MissionPrecenter : MonoBehaviour
     {
-        model = new MissionModel(DataManager.Instance.StageDataObject.ClearPieceData);
-        view.SetUp(model.MisionDataArr);
-    }
+        [SerializeField] private MiissionView view;
+        private MissionModel model;
 
-    public void ProgressMission(PieceData data , int count)
-    {
-        if(!model.TryGetData(data, out var missionData))
+        public bool IsAllClear => model.IsAllClear();
+
+        public void OnInitialized()
         {
-            return;
+            model = new MissionModel(DataManager.Instance.StageDataObject.ClearPieceData);
+            view.SetUp(model.MisionDataArr);
         }
 
-        model.PrigressData(missionData, count);
-
-        if (model.IsClear(data))
+        public void ProgressMission(PieceData data, int count)
         {
-            view.ClearMission(missionData);
-        }
+            if (!model.TryGetData(data, out var missionData))
+            {
+                return;
+            }
 
-        view.UpdateMission(missionData);
+            model.PrigressData(missionData, count);
+
+            if (model.IsClear(data))
+            {
+                view.ClearMission(missionData);
+            }
+
+            view.UpdateMission(missionData);
+        }
     }
 }

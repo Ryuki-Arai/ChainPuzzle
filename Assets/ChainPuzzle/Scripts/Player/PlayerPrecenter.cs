@@ -2,38 +2,41 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerPrecenter : MonoBehaviour
+namespace InGame
 {
-    [SerializeField] private PlayerView view;
-    [SerializeField] private MissionPrecenter mission;
-    private PlayerModel model;
-
-    public void OnInitialized()
+    public class PlayerPrecenter : MonoBehaviour
     {
-        model = new PlayerModel() ;
-        view.SetUp();
-        mission.OnInitialized();
-    }
+        [SerializeField] private PlayerView view;
+        [SerializeField] private MissionPrecenter mission;
+        private PlayerModel model;
 
-    public void OnUpdate()
-    {
-        if (Input.GetMouseButton(0))
+        public void OnInitialized()
         {
-            model.GetPieceItem();
-            view.SetLine(model.ChainPoint);
+            model = new PlayerModel();
+            view.SetUp();
+            mission.OnInitialized();
         }
-        else if (Input.GetMouseButtonUp(0))
+
+        public void OnUpdate()
         {
-            view.DisableChain(model.PieceChain);
-            if (model.IsDeleteLength)
+            if (Input.GetMouseButton(0))
             {
-                mission.ProgressMission(model.ChainData, model.PieceChain.Count);
-                if (mission.IsAllClear)
-                {
-                    MainPrecenter.Instance.OnClear();
-                }
+                model.GetPieceItem();
+                view.SetLine(model.ChainPoint);
             }
-            model.RemoveChain();
+            else if (Input.GetMouseButtonUp(0))
+            {
+                view.DisableChain(model.PieceChain);
+                if (model.IsDeleteLength)
+                {
+                    mission.ProgressMission(model.ChainData, model.PieceChain.Count);
+                    if (mission.IsAllClear)
+                    {
+                        MainPrecenter.Instance.OnClear();
+                    }
+                }
+                model.RemoveChain();
+            }
         }
     }
 }
