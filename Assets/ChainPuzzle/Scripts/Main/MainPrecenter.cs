@@ -27,4 +27,9 @@ public class MainPrecenter : SingletonMonoBehaviour<MainPrecenter>
     {
         view.OnUpdate();
     }
+
+    public void OnClear()
+    {
+        view.OnGameClear();
+    }
 }

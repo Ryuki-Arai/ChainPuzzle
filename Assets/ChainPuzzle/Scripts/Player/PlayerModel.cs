@@ -8,7 +8,7 @@ public class PlayerModel
 
     public List<Piece> PieceChain = new List<Piece>();
     public List<Vector3> ChainPoint => PieceChain.Select(piece => piece.gameObject.transform.position).ToList();
-    public bool IsCriteriaMet => PieceChain.Count >= DataManager.Instance.ChainDataObject.MinLength;
+    public bool IsDeleteLength => PieceChain.Count >= DataManager.Instance.ChainDataObject.MinLength;
     public PieceData ChainData => PieceChain[0].PieceData;
     private Camera camera;
 

@@ -20,3 +20,8 @@ public enum PieceDigitType
     Decillion,
     Undecillion,
 }
+
+public class SceneName
+{
+    public static readonly string InGame = "Main";
+}

@@ -7,6 +7,8 @@ public class MissionPrecenter : MonoBehaviour
     [SerializeField] private MiissionView view;
     private MissionModel model;
 
+    public bool IsAllClear => model.IsAllClear();
+
     public void OnInitialized()
     {
         model = new MissionModel(DataManager.Instance.StageDataObject.ClearPieceData);

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class MissionModel
@@ -43,6 +44,11 @@ public class MissionModel
 
         return false;
 
+    }
+
+    public bool IsAllClear()
+    {
+        return missionDataList.All(data => data.Count <= 0);
     }
 
     private void SetMissionData(FieldPieceData[] dataArr)

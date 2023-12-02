@@ -34,9 +34,6 @@ public class Mission : MonoBehaviour
 
     private void SetMission()
     {
-        Debug.Log($"Data.PieceData.StrView:{Data.PieceData.StrView}");
-        Debug.Log($"Data.PieceData.Material.color:{Data.PieceData.Material.color}");
-        Debug.Log($"Data.Count:{Data.Count}");
         pieceText.text = Data.PieceData.StrView;
         image.color = Data.PieceData.Material.color;
         countText.text = Data.Count.ToString();
