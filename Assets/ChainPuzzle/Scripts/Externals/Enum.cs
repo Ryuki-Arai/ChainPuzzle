@@ -23,5 +23,6 @@ public enum PieceDigitType
 
 public class SceneName
 {
+    public static readonly string Home = "Home";
     public static readonly string InGame = "Main";
 }

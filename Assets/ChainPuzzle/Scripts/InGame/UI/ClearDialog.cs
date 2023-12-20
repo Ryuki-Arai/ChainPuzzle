@@ -25,7 +25,7 @@ public class ClearDialog : MonoBehaviour
     {
         button.onClick.AddListener(() =>
         {
-            SceneLoader.Instance.ChangeScene(SceneName.InGame);
+            SceneLoader.Instance.ChangeScene(SceneName.Home);
         });
     }
 }
