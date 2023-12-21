@@ -21,7 +21,7 @@ namespace InGame
         public void DisableChain(List<Piece> pieceList)
         {
             pieceList.ForEach(p => p.Unselect());
-            if (pieceList.Count >= DataManager.Instance.ChainDataObject.MinLength)
+            if (pieceList.Count >= DataManager.Instance.ChainDataObject.MinChainLength)
             {
                 DisablePieces(pieceList);
             }

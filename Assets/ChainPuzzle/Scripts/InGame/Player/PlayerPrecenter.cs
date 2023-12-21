@@ -10,9 +10,9 @@ namespace InGame
         [SerializeField] private MissionPrecenter mission;
         private PlayerModel model;
 
-        public void OnInitialized()
+        public void OnInitialized(PieceControlFactory controlFactory)
         {
-            model = new PlayerModel();
+            model = new PlayerModel(controlFactory);
             view.SetUp();
             mission.OnInitialized();
         }
@@ -29,7 +29,12 @@ namespace InGame
                 view.DisableChain(model.PieceChain);
                 if (model.IsDeleteLength)
                 {
-                    mission.ProgressMission(model.ChainData, model.PieceChain.Count);
+                    if (!mission.ProgressMission(model.ChainData, model.PieceChain.Count))
+                    {
+                        var skipCount = model.IsPieceSkip ? 2 : 1;
+                        model.controlFactory.RequestNextPiece(model.ChainData.ID + skipCount, model.PieceChain[model.PieceChain.Count - 1].transform.position);
+                    }
+                    
                     if (mission.IsAllClear)
                     {
                         MainPrecenter.Instance.OnClear();

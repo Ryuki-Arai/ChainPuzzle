@@ -12,8 +12,8 @@ namespace InGame
 
         public void SetUp()
         {
-            player.OnInitialized();
             factory.OnInitialized();
+            player.OnInitialized(factory);
             clearDialog.SetUp();
         }
 

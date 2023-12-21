@@ -10,18 +10,21 @@ namespace InGame
 
         public List<Piece> PieceChain = new List<Piece>();
         public List<Vector3> ChainPoint => PieceChain.Select(piece => piece.gameObject.transform.position).ToList();
-        public bool IsDeleteLength => PieceChain.Count >= DataManager.Instance.ChainDataObject.MinLength;
+        public bool IsDeleteLength => PieceChain.Count >= DataManager.Instance.ChainDataObject.MinChainLength;
+        public bool IsPieceSkip => PieceChain.Count >= DataManager.Instance.ChainDataObject.SkipChainLength;
         public PieceData ChainData => PieceChain[0].PieceData;
+        public PieceControlFactory controlFactory { get; private set; }
         private Camera camera;
 
-        public PlayerModel()
+        public PlayerModel(PieceControlFactory controlFactory)
         {
-            OnInitialized();
+            OnInitialized(controlFactory);
         }
 
-        private void OnInitialized()
+        private void OnInitialized(PieceControlFactory controlFactory)
         {
             camera = Camera.main;
+            this.controlFactory = controlFactory;
         }
 
         private void CreateChain(Piece piece)
@@ -33,7 +36,6 @@ namespace InGame
         private void AddChain(Piece piece)
         {
             if (PieceChain[0].PieceData.ID == piece.PieceData.ID
-                && PieceChain[0].PieceData.DigitType == piece.PieceData.DigitType
                 && !PieceChain.Contains(piece))
             {
                 PieceChain.Add(piece);

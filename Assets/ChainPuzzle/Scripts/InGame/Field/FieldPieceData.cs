@@ -23,7 +23,7 @@ namespace InGame
 
         private PieceData GetPieceData()
         {
-            var index = DataManager.Instance.PieceDataObject.GetPieceDataIndex(PieceID, PieceType);
+            var index = DataManager.Instance.PieceDataObject.GetPieceDataIndex(PieceID);
             return DataManager.Instance.PieceDataObject.DataArr[index];
         }
     }

@@ -32,6 +32,16 @@ namespace InGame
             InactivePiece(piece);
         }
 
+        public void RequestNextPiece(int pieceID, Vector3 pos)
+        {
+            if(pieceID >= DataManager.Instance.PieceDataObject.DataArr.Length - 1)
+            {
+                return;
+            }
+
+            ActivePiece(CreatePiece(), pieceID, pos);
+        }
+
         private void PieceSafety()
         {
             var offStagePieces = piecePool
@@ -45,7 +55,7 @@ namespace InGame
 
         private void SetPieceDataArr()
         {
-            var startDataIndex = DataManager.Instance.PieceDataObject.GetPieceDataIndex(DataManager.Instance.StageDataObject.StartID, DataManager.Instance.StageDataObject.StartDigit);
+            var startDataIndex = DataManager.Instance.PieceDataObject.GetPieceDataIndex(DataManager.Instance.StageDataObject.StartID);
             var DataList = new List<PieceData>();
             for (var i = startDataIndex; i < startDataIndex + DataManager.Instance.StageDataObject.Index; i++)
             {
@@ -63,7 +73,7 @@ namespace InGame
 
             if (piecePool.Count == 0)
             {
-                ActivePiece(CreatePiece());
+                ActivePiece(CreatePiece(), GetRandomPos(spawnPoint.position, spawnPoint.localScale));
                 return;
             }
 
@@ -71,12 +81,12 @@ namespace InGame
 
             if (inactivePieceList.Count == 0)
             {
-                ActivePiece(CreatePiece());
+                ActivePiece(CreatePiece(), GetRandomPos(spawnPoint.position, spawnPoint.localScale));
                 return;
             }
 
             var piece = inactivePieceList[0];
-            ActivePiece(piece);
+            ActivePiece(piece, GetRandomPos(spawnPoint.position, spawnPoint.localScale));
         }
 
         private Piece CreatePiece()
@@ -98,10 +108,17 @@ namespace InGame
             }
         }
 
-        private void ActivePiece(Piece piece)
+        private void ActivePiece(Piece piece, Vector3 pos)
         {
             piece.Initialize(GetPieceData());
-            piece.gameObject.transform.position = GetRandomPos(spawnPoint.position, spawnPoint.localScale);
+            piece.gameObject.transform.position = pos;
+            piece.gameObject.SetActive(true);
+        }
+
+        private void ActivePiece(Piece piece, int id,  Vector3 pos)
+        {
+            piece.Initialize(GetPieceData(id));
+            piece.gameObject.transform.position = pos;
             piece.gameObject.SetActive(true);
         }
 
@@ -113,6 +130,11 @@ namespace InGame
         private PieceData GetPieceData()
         {
             return pieceDataArr[Random.Range(0, pieceDataArr.Length - 1)];
+        }
+
+        private PieceData GetPieceData(int id)
+        {
+            return DataManager.Instance.PieceDataObject.DataArr[DataManager.Instance.PieceDataObject.GetPieceDataIndex(id)];
         }
 
         private Vector3 GetRandomPos(Vector3 position, Vector3 scale)

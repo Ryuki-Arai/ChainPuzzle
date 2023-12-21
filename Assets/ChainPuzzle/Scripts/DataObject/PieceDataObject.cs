@@ -8,17 +8,17 @@ public class PieceDataObject : ScriptableObject
 {
     [field: SerializeField] public PieceData[] DataArr { get; private set; }
 
-    public int GetPieceDataIndex(int id, PieceDigitType type)
+    public int GetPieceDataIndex(int id)
     {
         for(var i = 0; i < DataArr.Length; i++)
         {
-            if(DataArr[i].ID == id && DataArr[i].DigitType == type)
+            if(DataArr[i].ID == id)
             {
                 return i;
             }
         }
 
-        Debug.LogError($"IDが{id}でTypeが{type}のピースが見つかりませんでした");
+        Debug.LogError($"IDが{id}のピースが見つかりませんでした");
         return -1;
     }
 }

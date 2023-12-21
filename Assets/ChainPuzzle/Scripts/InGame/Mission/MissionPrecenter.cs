@@ -17,11 +17,11 @@ namespace InGame
             view.SetUp(model.MisionDataArr);
         }
 
-        public void ProgressMission(PieceData data, int count)
+        public bool ProgressMission(PieceData data, int count)
         {
             if (!model.TryGetData(data, out var missionData))
             {
-                return;
+                return false;
             }
 
             model.PrigressData(missionData, count);
@@ -32,6 +32,8 @@ namespace InGame
             }
 
             view.UpdateMission(missionData);
+
+            return true;
         }
     }
 }
