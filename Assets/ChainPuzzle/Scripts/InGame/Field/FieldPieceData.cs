@@ -9,15 +9,13 @@ namespace InGame
     public class FieldPieceData
     {
         [field: SerializeField] public int PieceID { get; private set; }
-        [field: SerializeField] public PieceDigitType PieceType { get; private set; }
         [field: SerializeField] public int PieceCount { get; private set; }
 
         public PieceData PieceData => GetPieceData();
 
-        public FieldPieceData(int ID, PieceDigitType Type, int Count)
+        public FieldPieceData(int ID, int Count)
         {
             PieceID = ID;
-            PieceType = Type;
             PieceCount = Count;
         }
 

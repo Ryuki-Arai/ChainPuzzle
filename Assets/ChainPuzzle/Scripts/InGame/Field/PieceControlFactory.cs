@@ -9,10 +9,13 @@ namespace InGame
 {
     public class PieceControlFactory : MonoBehaviour
     {
-        //[SerializeField] private StageDataObject StageDataObject;
         [SerializeField] private Transform spawnPoint;
         [SerializeField] private PieceData[] pieceDataArr;
         private List<Piece> piecePool = new List<Piece>();
+
+        private const float Inactive_Pos_Y = -10f;
+
+        public List<Piece> ActivePieces => piecePool.Where(piece => piece.gameObject.activeSelf).ToList();
 
         public void OnInitialized()
         {
@@ -46,7 +49,7 @@ namespace InGame
         {
             var offStagePieces = piecePool
                 .Where(piece =>
-                    piece.gameObject.transform.position.y < DataManager.Instance.StageDataObject.InactivePosY
+                    piece.gameObject.transform.position.y < Inactive_Pos_Y
                     && piece.gameObject.activeSelf)
                 .ToList();
 

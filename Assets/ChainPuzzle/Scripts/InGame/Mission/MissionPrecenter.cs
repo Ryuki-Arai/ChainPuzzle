@@ -17,6 +17,16 @@ namespace InGame
             view.SetUp(model.MisionDataArr);
         }
 
+        public void PlayMoving(Vector2 pos, PieceData data)
+        {
+            view.PlayMoving(pos, data);
+        }
+
+        public bool IncludeMissionPiece(PieceData data)
+        {
+            return model.TryGetData(data, out var missionData);
+        }
+
         public bool ProgressMission(PieceData data, int count)
         {
             if (!model.TryGetData(data, out var missionData))

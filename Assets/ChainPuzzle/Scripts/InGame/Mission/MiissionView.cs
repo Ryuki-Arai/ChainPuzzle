@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,8 @@ namespace InGame
     {
         [SerializeField] Mission missionPrefab;
         [SerializeField] Transform missionRoot;
+        [SerializeField] MissionPiece missionPiecePrefab;
+        [SerializeField] Transform missionPieceRoot;
 
         private List<Mission> dataList;
 
@@ -15,6 +18,14 @@ namespace InGame
         {
             dataList = new List<Mission>();
             SetMission(dataArr);
+        }
+
+        public void PlayMoving(Vector2 pos, PieceData data)
+        {
+            var missionPiece = Instantiate(missionPiecePrefab,missionPieceRoot);
+            missionPiece.transform.position = pos;
+            missionPiece.SetUp(data);
+            missionPiece.PlayMoving(SearchMission(data));
         }
 
         public void UpdateMission(MissionData data)
@@ -33,6 +44,18 @@ namespace InGame
             {
                 mission.OnClear();
             }
+        }
+
+        private Vector3 SearchMission(PieceData data)
+        {
+            foreach(var misiondata in dataList)
+            {
+                if(misiondata.Data.PieceData == data)
+                {
+                    return misiondata.transform.position;
+                }
+            }
+            return Vector3.zero;   
         }
 
         private Mission TrySarchData(MissionData data)

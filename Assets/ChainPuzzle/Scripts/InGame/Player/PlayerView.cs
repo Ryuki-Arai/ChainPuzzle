@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using DG.Tweening;
 
 namespace InGame
 {
@@ -11,6 +12,7 @@ namespace InGame
         [SerializeField] LineRenderer lineRenderer;
         [SerializeField, Range(0.0f, 1.0f)] float lineWidth;
         [SerializeField] float linePosZ;
+        [SerializeField] Transform missionMovePos;
 
         public void SetUp()
         {
@@ -18,13 +20,14 @@ namespace InGame
             lineRenderer.endWidth = lineWidth;
         }
 
+        public Tween MissionMove(Transform piece)
+        {
+            return piece.DOMove(missionMovePos.position, 0.15f);
+        }
+
         public void DisableChain(List<Piece> pieceList)
         {
             pieceList.ForEach(p => p.Unselect());
-            if (pieceList.Count >= DataManager.Instance.ChainDataObject.MinChainLength)
-            {
-                DisablePieces(pieceList);
-            }
             ClearLinePoints();
         }
 
@@ -35,11 +38,21 @@ namespace InGame
             lineRenderer.SetPositions(positions);
         }
 
-        private void DisablePieces(List<Piece> pieceList)
+        public void DisablePieces(List<Piece> pieceList)
         {
+            var piecePosList = pieceList.Select(p => p.transform.position).ToList();
             foreach (var piece in pieceList)
             {
-                piece.gameObject.SetActive(false);
+                DOTween.Sequence()
+                    .OnStart(() =>
+                    {
+                        piecePosList.RemoveAt(piecePosList.Count - 1);
+                    })
+                    .Append(piece.transform.DOMove(piecePosList[piecePosList.Count - 1],0.15f))
+                    .OnComplete(() =>
+                    {
+                        piece.gameObject.SetActive(false);
+                    });
             }
         }
 

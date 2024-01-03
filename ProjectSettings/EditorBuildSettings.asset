@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/ChainPuzzle/Scenes/Home.unity
+    guid: f2fa3edd6d1ace248b706200a55a0380
+  - enabled: 1
     path: Assets/ChainPuzzle/Scenes/Main.unity
     guid: 41590c0405ed2414694fd2c0c516bcb9
   m_configObjects: {}

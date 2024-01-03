@@ -14,7 +14,7 @@ namespace InGame
         public bool IsPieceSkip => PieceChain.Count >= DataManager.Instance.ChainDataObject.SkipChainLength;
         public PieceData ChainData => PieceChain[0].PieceData;
         public PieceControlFactory controlFactory { get; private set; }
-        private Camera camera;
+        public Camera Camera;
 
         public PlayerModel(PieceControlFactory controlFactory)
         {
@@ -23,7 +23,7 @@ namespace InGame
 
         private void OnInitialized(PieceControlFactory controlFactory)
         {
-            camera = Camera.main;
+            Camera = Camera.main;
             this.controlFactory = controlFactory;
         }
 
@@ -50,9 +50,9 @@ namespace InGame
 
         public void GetPieceItem()
         {
-            Ray raycast = camera.ScreenPointToRay(Input.mousePosition);
+            Ray raycast = Camera.ScreenPointToRay(Input.mousePosition);
             Debug.DrawRay(raycast.origin, raycast.direction * 10.0f, Color.red, 3f, false);
-            var ray = camera.ScreenPointToRay(Input.mousePosition);
+            var ray = Camera.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, 10.0f))
             {
