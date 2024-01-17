@@ -19,6 +19,8 @@ namespace InGame
 
         private void Initialize()
         {
+            DataManager.Instance.OnSetUp(); 
+
             view.SetUp();
             model = new MainModel();
             this.UpdateAsObservable()

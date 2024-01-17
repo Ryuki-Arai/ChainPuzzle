@@ -9,6 +9,8 @@ namespace InGame
 {
     public class PieceControlFactory : MonoBehaviour
     {
+        [SerializeField] private Piece piecePrefab;
+        [SerializeField] private int maxSpawn;
         [SerializeField] private Transform spawnPoint;
         [SerializeField] private PieceData[] pieceDataArr;
         private List<Piece> piecePool = new List<Piece>();
@@ -20,7 +22,7 @@ namespace InGame
         public void OnInitialized()
         {
             SetPieceDataArr();
-            CreatePiece(DataManager.Instance.StageDataObject.MaxSpawn);
+            CreatePiece(maxSpawn);
         }
 
         public void OnUpdate()
@@ -69,7 +71,7 @@ namespace InGame
 
         private void SpawnPiece()
         {
-            if (piecePool.Where(piece => piece.gameObject.activeSelf).ToList().Count >= DataManager.Instance.StageDataObject.MaxSpawn)
+            if (piecePool.Where(piece => piece.gameObject.activeSelf).ToList().Count >= maxSpawn)
             {
                 return;
             }
@@ -94,7 +96,7 @@ namespace InGame
 
         private Piece CreatePiece()
         {
-            var piece = Instantiate(DataManager.Instance.StageDataObject.PiecePrefab, spawnPoint.position, Quaternion.identity);
+            var piece = Instantiate(piecePrefab, spawnPoint.position, Quaternion.identity);
             piece.gameObject.SetActive(false);
             piecePool.Add(piece);
             return piece;
@@ -105,7 +107,7 @@ namespace InGame
             var pieceArr = new Piece[count];
             for (var i = 0; i < count; i++)
             {
-                var piece = Instantiate(DataManager.Instance.StageDataObject.PiecePrefab, spawnPoint.position, Quaternion.identity);
+                var piece = Instantiate(piecePrefab, spawnPoint.position, Quaternion.identity);
                 piece.gameObject.SetActive(false);
                 piecePool.Add(piece);
             }

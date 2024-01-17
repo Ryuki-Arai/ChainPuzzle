@@ -9,8 +9,10 @@ public class StageDataObject : ScriptableObject
     [field: SerializeField] public int StageLevel { get; private set; }
     [field: SerializeField] public int StartID { get; private set; }
     [field: SerializeField] public int Index { get; private set; }
-    [field: SerializeField] public Piece PiecePrefab { get; private set; }
-    [field: SerializeField] public int MaxSpawn { get; private set; }
-    [field: SerializeField] public FieldPieceData[] ClearPieceData { get; private set; }
-    [field: SerializeField] public float LimitTime { get; private set; }
+    [field: SerializeField] public FieldPieceData ClearPieceData { get; private set; }
+
+    public void OnSetUp()
+    {
+        Debug.Log("LoadingStageData");
+    }
 }

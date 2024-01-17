@@ -12,10 +12,10 @@ namespace InGame
         private List<MissionData> missionDataList;
 
 
-        public MissionModel(FieldPieceData[] dataArr)
+        public MissionModel(FieldPieceData data)
         {
             missionDataList = new List<MissionData>();
-            SetMissionData(dataArr);
+            SetMissionData(data);
         }
 
         public bool TryGetData(PieceData pieceData, out MissionData missionData)
@@ -53,21 +53,12 @@ namespace InGame
             return missionDataList.All(data => data.Count <= 0);
         }
 
-        private void SetMissionData(FieldPieceData[] dataArr)
+        private void SetMissionData(FieldPieceData data)
         {
-            for (int i = 0; i < dataArr.Length; i++)
-            {
-                var data = dataArr[i];
-                var pieceData = data.PieceData;
-                var count = data.PieceCount;
-                var mission = new MissionData(pieceData, count);
-                if (missionDataList.Contains(mission))
-                {
-                    Debug.LogError("ミッションが重複しています");
-                    continue;
-                }
-                missionDataList.Add(mission);
-            }
+            var pieceData = data.PieceData;
+            var count = data.PieceCount;
+            var mission = new MissionData(pieceData, count);
+            missionDataList.Add(mission);
         }
     }
 }

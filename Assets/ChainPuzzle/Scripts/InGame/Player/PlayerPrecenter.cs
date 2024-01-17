@@ -32,14 +32,13 @@ namespace InGame
                     view.DisablePieces(model.PieceChain);
                     var skipCount = model.IsPieceSkip ? 2 : 1;
                     model.controlFactory.RequestNextPiece(model.ChainData.ID + skipCount, model.PieceChain[model.PieceChain.Count - 1].transform.position);
-
-                    if (mission.IsAllClear)
-                    {
-                        MainPrecenter.Instance.OnClear();
-                    }
                 }
                 DeletionOfChain();
                 MissionAcept();
+                if (mission.IsAllClear)
+                {
+                    MainPrecenter.Instance.OnClear();
+                }
             }
         }
 
