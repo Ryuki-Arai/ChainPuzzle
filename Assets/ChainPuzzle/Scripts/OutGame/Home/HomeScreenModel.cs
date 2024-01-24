@@ -6,6 +6,6 @@ namespace OutGame
 {
     public class HomeScreenModel
     {
-        public int Level => DataManager.Instance.PlayerDataObject.StageLevel;
+        public int Level => DataSaveUtility.I.Data.PlayerData.StageLevel;
     }
 }

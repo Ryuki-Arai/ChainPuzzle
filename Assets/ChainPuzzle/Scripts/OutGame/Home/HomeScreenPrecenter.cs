@@ -19,6 +19,7 @@ namespace OutGame
 
         private void OnClickPlayButton()
         {
+            DataManager.Instance.SetStageData(DataModel.I.Game.GetStageData(DataSaveUtility.I.Data.PlayerData.StageLevel));
             SceneLoader.Instance.ChangeScene(SceneName.InGame);
         }
     }

@@ -19,6 +19,7 @@ namespace InGame
 
         private void Initialize()
         {
+            DataSaveUtility.I.GetData();
             DataManager.Instance.OnSetUp(); 
 
             view.SetUp();

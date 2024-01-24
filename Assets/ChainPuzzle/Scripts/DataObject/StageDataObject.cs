@@ -11,6 +11,14 @@ public class StageDataObject : ScriptableObject
     [field: SerializeField] public int Index { get; private set; }
     [field: SerializeField] public FieldPieceData ClearPieceData { get; private set; }
 
+    public StageDataObject(int level,int startID, int index,int clearPiece, int clearPieceCount)
+    {
+        StageLevel = level;
+        StartID = startID;
+        Index = index;
+        ClearPieceData = new FieldPieceData(clearPiece, clearPieceCount);
+    }
+
     public void OnSetUp()
     {
         Debug.Log("LoadingStageData");

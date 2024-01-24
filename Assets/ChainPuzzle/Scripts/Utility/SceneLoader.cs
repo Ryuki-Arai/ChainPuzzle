@@ -17,6 +17,7 @@ public class SceneLoader : SingletonMonoBehaviour<SceneLoader>
 
     public void ChangeScene(string sceneName)
     {
+        DataSaveUtility.I.Save();
         token?.Cancel();
         token = new CancellationTokenSource();
         PlayChangeScene(sceneName, token.Token).Forget();

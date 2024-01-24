@@ -9,10 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3114978d4627b4f408c16f3ab0a6768a, type: 3}
-  m_Name: PlayerDataObject
+  m_Script: {fileID: 11500000, guid: 8821267fe017a5b409c798131053db49, type: 3}
+  m_Name: SaveDataObject
   m_EditorClassIdentifier: 
-  <StageLevel>k__BackingField: 1
-  <Coin>k__BackingField: 0
-  <Life>k__BackingField: 0
-  <Name>k__BackingField: Player
+  <PlayerData>k__BackingField:
+    <StageLevel>k__BackingField: 1
+    <Coin>k__BackingField: 0
+    <Life>k__BackingField: 0
+    <Name>k__BackingField: Player

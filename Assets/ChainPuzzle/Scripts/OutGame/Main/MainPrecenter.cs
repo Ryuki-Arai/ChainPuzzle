@@ -17,6 +17,7 @@ namespace OutGame
 
         private void Initialized()
         {
+            DataSaveUtility.I.GetData();
 
             Model = new MainModel();
             View.Initialize();

@@ -27,8 +27,10 @@ public class LoadingPrecenter : MonoBehaviour
 
         yield return GameManager.Instance.LoadMasterDataAsync(download =>
         {
-            Debug.Log(download.text);
+            DataModel.I.Game.StageData = JsonUtility.FromJson<GameMasterModel>(download.text).StageData;
         });
+
+        DataSaveUtility.I.GetData();
 
         DOTween.KillAll();
         SceneLoader.Instance.ChangeScene(SceneName.Home);
