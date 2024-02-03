@@ -40,6 +40,10 @@ namespace InGame
 
         public void DisablePieces(List<Piece> pieceList)
         {
+            pieceList.ForEach(p =>
+            {
+                p.Collider.enabled = false;
+            });
             var piecePosList = pieceList.Select(p => p.transform.position).ToList();
             foreach (var piece in pieceList)
             {
