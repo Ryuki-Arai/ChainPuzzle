@@ -31,6 +31,7 @@ namespace InGame
         {
             PieceChain.Add(piece);
             piece.Select();
+            UniAndroidVibration.Vibrate(50);
         }
 
         private void AddChain(Piece piece)
@@ -40,7 +41,16 @@ namespace InGame
             {
                 PieceChain.Add(piece);
                 piece.Select();
+                UniAndroidVibration.Vibrate(50);
             }
+        }
+
+        private void RemoveLastPiece()
+        {
+            var piece = PieceChain[PieceChain.Count - 1];
+            PieceChain.Remove(piece);
+            piece.Unselect();
+            UniAndroidVibration.Vibrate(50);
         }
 
         private bool CheckDistance(Vector3 piecePosition)
@@ -64,9 +74,16 @@ namespace InGame
                     {
                         CreateChain(piece);
                     }
+                    else if(PieceChain.Count > 1 && piece == PieceChain[PieceChain.Count - 2])
+                    {
+                        RemoveLastPiece();
+                    }
                     else
                     {
-                        if (CheckDistance(piece.gameObject.transform.position)) AddChain(piece);
+                        if (CheckDistance(piece.gameObject.transform.position))
+                        {
+                            AddChain(piece);
+                        }
                     }
                 }
             }
