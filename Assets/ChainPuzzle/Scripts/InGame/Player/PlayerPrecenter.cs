@@ -21,6 +21,8 @@ namespace InGame
 
         public void OnUpdate()
         {
+            if (mission.IsAllClear) return;
+
             if (Input.GetMouseButton(0))
             {
                 SelectPieces();
