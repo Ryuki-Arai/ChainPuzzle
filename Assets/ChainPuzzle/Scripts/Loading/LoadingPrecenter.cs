@@ -11,7 +11,7 @@ public class LoadingPrecenter : MonoBehaviour
     [SerializeField] Transform loadingText;
     [SerializeField] Slider loadingBar;
 
-    private string accessKey = "AKfycbwR0wBvaAJBEBD3PYGRwDeySvy11C3vw4yD-rkdnUC29qpVD1Bhw0YvV2bNg32xh2bO";
+    //private string accessKey = "AKfycbwR0wBvaAJBEBD3PYGRwDeySvy11C3vw4yD-rkdnUC29qpVD1Bhw0YvV2bNg32xh2bO";
 
     private Tween loadingTween;
     private void Start()

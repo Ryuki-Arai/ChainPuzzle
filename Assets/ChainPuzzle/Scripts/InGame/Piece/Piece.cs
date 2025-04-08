@@ -13,22 +13,22 @@ namespace InGame
         [SerializeField] private Renderer mesh;
         [SerializeField] private MeshRenderer outline;
         [SerializeField] private MeshFilter outlineMesh;
-        private Collider collider;
+        private Collider pieceCollider;
         public PieceData PieceData { get; private set; }
-        public Collider Collider => collider;
+        public Collider Collider => pieceCollider;
 
         private void Awake()
         {
             var Mesh = Instantiate(outlineMesh.sharedMesh);
             Mesh.triangles = Mesh.triangles.Reverse().ToArray();
             outlineMesh.sharedMesh = Mesh;
-            collider = GetComponent<Collider>();
+            pieceCollider = GetComponent<Collider>();
         }
 
         public void Initialize(PieceData data)
         {
             PieceData = data;
-            collider.enabled = true;
+            pieceCollider.enabled = true;
             SetData();
         }
 

@@ -13,10 +13,8 @@ MonoBehaviour:
   m_Name: StageDataObject
   m_EditorClassIdentifier: 
   <StageLevel>k__BackingField: 0
-  <StartID>k__BackingField: 0
-  <Index>k__BackingField: 10
-  <MaxSpawn>k__BackingField: 70
+  <StartID>k__BackingField: 4
+  <Index>k__BackingField: 5
   <ClearPieceData>k__BackingField:
-    <PieceID>k__BackingField: 9
-    <PieceCount>k__BackingField: 5
-  <LimitTime>k__BackingField: 0
+    <PieceID>k__BackingField: 11
+    <PieceCount>k__BackingField: 1

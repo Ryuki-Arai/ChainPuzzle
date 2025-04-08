@@ -71,12 +71,24 @@ public class DataModel : Singleton<DataModel>
     IEnumerator CopyDataFile()
     {
         var path = $"jar:file://{Application.dataPath}!/assets/Data/Data.bytes";
-        WWW www = new WWW(path);
 
-        yield return www;
+        UnityWebRequest request = UnityWebRequest.Get(path);
 
-        File.WriteAllBytes(Path.Combine(Application.persistentDataPath, "Data.bytes"), www.bytes);
-        www.Dispose();
-        www = null;
+        // 非同期でデータを取得
+        yield return request.SendWebRequest();
+
+        // リクエストが失敗していないかチェック
+        if (request.result == UnityWebRequest.Result.Success)
+        {
+            // データをパーシステントディレクトリに書き込む
+            File.WriteAllBytes(Path.Combine(Application.persistentDataPath, "Data.bytes"), request.downloadHandler.data);
+        }
+        else
+        {
+            Debug.LogError($"Failed to load data: {request.error}");
+        }
+
+        request.Dispose();
+        request = null;
     }
 }
