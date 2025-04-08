@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
@@ -7,7 +6,7 @@ using UnityEditor.Build.Reporting;
 public class Builder
 {
 
-    private const string ANDROID_BUNDLE_IDENTIFIER = "com.SunshineGameStudio.ChainPuzzle2048";
+    private const string ANDROID_BUNDLE_IDENTIFIER = "com.StudioSunshine.ChainPuzzle2048";
 
     private const string PRODUCT_NAME = "ChainPuzzle2048";
 

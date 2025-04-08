@@ -12,7 +12,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
+  companyName: StudioSunshine
   productName: ChainPuzzle2048
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -162,8 +162,8 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.SunshineGameStudio.ChainPuzzle2048
-    Standalone: com.DefaultCompany.ChainPuzzle
+    Android: com.StudioSunshine.ChainPuzzle2048
+    Standalone: com.StudioSunshine.ChainPuzzle2048
   buildNumber:
     Standalone: 0
     VisionOS: 0
@@ -766,7 +766,7 @@ PlayerSettings:
     PS5: UNITY_POST_PROCESSING_STACK_V2
     QNX: UNITY_POST_PROCESSING_STACK_V2
     Stadia: UNITY_POST_PROCESSING_STACK_V2
-    Standalone: UNITY_POST_PROCESSING_STACK_V2;UNITASK_DOTWEEN_SUPPORT
+    Standalone: UNITY_POST_PROCESSING_STACK_V2;UNITASK_DOTWEEN_SUPPORT;LEVELPLAY_DEPENDENCIES_INSTALLED
     VisionOS: UNITY_POST_PROCESSING_STACK_V2
     WebGL: UNITY_POST_PROCESSING_STACK_V2
     Windows Store Apps: UNITY_POST_PROCESSING_STACK_V2
