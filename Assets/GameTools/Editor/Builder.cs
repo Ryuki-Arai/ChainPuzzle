@@ -17,7 +17,7 @@ public class Builder
 
     private const string ABB_LOCATION_PATH = "C:\\Users\\vantan\\Documents\\GooglePlayApp\\ChainPuzzle\\ABB\\studiosunshihe-chainpuzzle2048-1.0.2.aab";
 
-    private const int BUNDLE_VERSION_CODE = 6;
+    private const int BUNDLE_VERSION_CODE = 7;
 
     private const string BUNDLE_VERSION = "1.0.2";
 
@@ -95,7 +95,7 @@ public class Builder
         //gaSetting.UpdateSecretKey(0, AND_GA_SECRET_KEY);
         //EditorUtility.SetDirty(gaSetting);
 
-        BuildOptions opt = BuildOptions.CompressWithLz4;
+        BuildOptions opt = BuildOptions.None;
 
         var report = BuildPipeline.BuildPlayer(GetAllScene(), ABB_LOCATION_PATH, BuildTarget.Android, opt);
         var summary = report.summary;
